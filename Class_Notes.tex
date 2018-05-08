@@ -16,12 +16,14 @@
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\bbP}{\mathbb{P}}
+\newcommand{\bbE}{\mathbb{E}}
 \newcommand{\Om}{\Omega}
 \newcommand{\om}{\omega}
 \newcommand{\emp}{\emptyset}
 \newcommand{\lt}{\textless}
 \newcommand{\gt}{\textgreater}
 \newcommand{\imply}{\Rightarrow}
+\newcommand{\x}{\cdot}
 
 \title{MATH 323 Class Notes}
 \author{Owen Lewis}
@@ -345,6 +347,155 @@ A random variable $Y$ is said to have binomial distribution based on $n$ trials 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 8, 2018}
+\subsection{Bernoulli Distribution}
+Let $X$ be a random variable. Toss a coin. The outcomes are $H$, and $T$. Set $X(H) = 1$, and $X(T) = 0$. We have $X(\Om) = \{0, 1\}$.\\ Assume $\bbP(H) = p$, for $0\ \lt\ p\ \lt\ 1$. Then the probability function $\bbP(X=x)$ of $X$ is
+\begin{center}
+\begin{tabular}{| c || c | c |}
+\hline
+$x$ & 0 & 1\\
+\hline
+$\bbP(X = x)$ & 1-p & p\\
+\hline
+\end{tabular}
+\end{center}
+A random variable $X$ that has the above probability function is called a \ti{Bernoulli random variable} on $X$. Also, $X$ is said to have the \ti{Bernoulli Distribution} with parameter $p$. We write $X \sim$ Ber($p$).\\\\
+\underline{Proposition:} If $X \sim$ Ber($p$), then
+\begin{enumerate}
+	\item $E(X) = p$
+	\item $V(X) = p(1-p)$
+\end{enumerate}
+\underline{Proof} of (1):\\
+$E(X) = \sum_{x} x\cdot \bbP(X=x)$\ = $0\cdot \bbP(X=0) + 1\cdot \bbP(X=1) = p.$ \qed \\\\
+\underline{Proof} of (2):\\
+$V(X) = E(X-E(X)^{2})$ = $E(X^{2}) - (E(X))^{2}$.\\
+Also, $E(X^{2})$ = $\sum_{x} x^{2}\cdot \bbP(X=x)$ = $p$.\\
+Therefore, $V(X) = p-p^{2} = p(1-p)$. \qed
+\subsection{Some Properties of $E$, and $V$}
+Let $X$ be a random variable, and let $c, \alpha \in \R$ be constants.
+\begin{enumerate}
+	\item $E(X+c)=E(X)+c$
+	\item $V(X+c)=V(X)$
+	\item $E(\alpha X)=\alpha E(X)$
+	\item $V(\alpha X)=\alpha^{2} V(X)$
+\end{enumerate}
+\ \\\\
+\subsection{A Proof that $V(X) = E(X^{2}) - (E(X))^{2}$}
+Property: If $f$, $g$ are functions, then $E(f(x) + g(x)) = E(f(x)) + E(g(x))$.\\\\
+Set $\mu := E(X)$. Then, by definition,
+\begin{align*}
+	V(X) &= E((X-E(X))^{2})\\
+		&= E(x^{2} -2\mu x + \mu^{2})\\
+		&= E(X^{2}) -2\mu E(X) + \mu^{2}\\
+		&= E(X^{2})-2\mu^{2} + \mu^{2}\\
+		&= E(X^{2}) - \mu^{2}\\
+		&= E(X^{2}) - (E(X))^{2}
+\end{align*}
+\qed
+\subsection{More on Binomial Distribution}
+\underline{Proposition:} If $X \sim$ Bin($n$, $p$), then
+\begin{enumerate}
+	\item $E(X) = np$
+	\item $V(X) = np(1-p)$
+\end{enumerate}
+To prove there we first have to note that
+\[k\cdot {n\choose k} = k\cdot \frac{n!}{k!(n-k)!} = n\cdot \frac{(n-1)!}{(k-1)!(n-k)!} = n\cdot {{n-1}\choose{k-1}}\]\\
+\underline{Proof} of (1): By definition,
+\begin{align*}
+	E(X) &= \sum_{k=0}^{n} k\cdot \bbP(X=k)\\
+		&= \sum_{k=0}^{n} k\cdot {n\choose k}\cdot p^{k}(1-p)^{n-k}\\
+		&= \sum_{k=0}^{n} n\cdot {{n-1}\choose{k-1}}\cdot p^{k}(1-p)^{n-k}\\
+		\intertext{Let $\ell = k-1$}
+		&= n\cdot \sum_{\ell = 0}^{n-1} {{n-1}\choose{\ell}}\cdot p^{\ell + 1}(1-p)^{(n-1)-\ell}\\
+		&= np\cdot \sum_{\ell=0}^{n-1} {{n-1}\choose{\ell}}\cdot p^{\ell}(1-p)^{(n-1)-\ell}\\
+		&= np(p+(1-p))^{n-1}\\
+		&= np
+\end{align*}
+\qed\\\\
+\underline{Proof} of (2): By definition, 
+\begin{align*}
+	V(X) &= E(X^{2}) - n^{2}p^{2}\\
+		&= E(X(X-1)+X) - n^{2}p^{2}\\
+		&= E(X(X-1))+np-n^{2}p^{2}\\
+\end{align*}
+Now we need to reduce $E(X(X-1))$  down.
+\begin{align*}
+	E(X(X-1)) &= \sum_{k=0}^{n} k\cdot (k-1)\cdot {n\choose k}\cdot p^{k}(1-p)^{n-k}\\
+			&= \sum_{k=2}^{n} k\cdot (k-1)\cdot {n\choose k}\cdot p^{k}(1-p)^{n-k}
+\end{align*}
+Now we need to change the variables in $k(k-1)\cdot {n\choose k}$.
+\[k\cdot (k-1)\cdot {n\choose k} = n\cdot (n-1)\cdot {{n-2}\choose{k-2}}\]
+so now plugging that back into $E(X)$ we get
+\begin{align*}
+	E(X(X-1)) &= \sum_{k=2}^{n} k\cdot (k-1)\cdot {n\choose k}\cdot p^{k}(1-p)^{n-k}\\
+			&= \sum_{k=2}^{n} n\cdot (n-1)\cdot {{n-2}\choose{k-2}}\cdot p^{k}(1-p)^{n-k}
+			\intertext{Let $\ell = k-2$}
+			&= n\cdot (n-1)\cdot \sum_{\ell =0}^{n-2} {{n-2}\choose{\ell}}\cdot p^{\ell}(1-p)^{(n-2)-\ell}\\
+			&= n\cdot(n-1)\cdot p^{2}\cdot (p + (1-p))^{n-2}\\
+			&= n\cdot(n-1)\cdot p^{2}
+\end{align*}
+Plugging this back into $V(X)$, we get
+\begin{align*}
+	V(X) &= E(X(X-1))+np-n^{2}p^{2}\\
+		&= n\cdot(n-1)\cdot p^{2} + np - n^{2}p^{2}\\
+		&= np -np^{2}\\
+		&= np(1-p)
+\end{align*}
+\qed\\\\
+\textbf{Ex 1:} 3.60 from the textbook\\\\
+\textbf{Solution} Fish die with $\bbP$ = 0.2. Therefore the prob of a success (they survive), $\bbP(S)$ = 0.8. Let the random variable $X$ be the number of fish that survive. There are 20 fish. Thus $X \sim$ Bin($n=20$, $p=0.8$). The probability that 14 fish survive is
+\[\bbP(X=14) = {20\choose 14}\cdot (0.8)^{14}\cdot(0.2)^{6} \approx 0.1091 = 10.91\%\]
+\subsection{Geometric Distribution}
+FIrst recall that
+\[\sum_{n=0}^{\infty} x^{n} = \frac{1}{1-x}, \  |x|\ \lt\ 1.\]\\
+Suppose an experiment leads to either an $S(uccess)$ or an $F(ailure)$. Suppose we want to repeat the experiment until an $S$ occurs\\
+Let $\bbP(S) = p$, when 0 \lt $p$ \lt 1, and of course, $\bbP(F) = 1-p$. Then
+\[\Om = \{\om_{1}, \om_{2}, \dots, \om_{n}\}\]
+where 
+\[\om_{n} = FFF\dots FS\]
+with $n-1\ Fs$.\\
+Let the random variable $X$ reperesent the number of trials needed for as $S$ to occur. Then
+\[\Om(X) = \N\]
+The probability function of $X$ is then
+\[\bbP(X=k) = p\cdot (1-p)^{k-1}\]
+If $X$ satisfies this then we write $X \sim$ Geometric($p$).\\\\
+\underline{Proposition:}
+\begin{enumerate}
+	\item $E(X) = \frac{1}{p}$
+	\item $V(X) = \frac{1}{p}\cdot (\frac{1}{p} - 1)$
+\end{enumerate}
+\underline{Proof} of (1): By definition
+\begin{align*}
+	E(X) &= \sum_{k=1}^{\infty} k\cdot \bbP(X=k)\\
+		&= \sum_{k=1}^{\infty} k\cdot p\cdot (1-p)^{k-1}\\
+		&= p\cdot \sum_{k=1}^{\infty} k\cdot (1-p)^{k-1}\\
+		&= p\cdot \frac{1}{(1-(1-p))^{2}}\\
+		&= \frac{p}{p^{2}}\\
+		&= \frac{1}{p}
+\end{align*}
+\qed\\
+\underline{Proof} of (2): By definition
+\begin{align*}
+	V(X) &= E(X^2) - (E(X))^2\\
+		&= E(X^2) - \frac{1}{p^2}\\
+		&= E(X(X-1)) + E(X) - \frac{1}{p^2}\\
+		&= E(X(X-1)) + \frac{1}{p} - \frac{1}{p^2}
+\end{align*}
+Now we need to reduce down $E(X(X-1))$
+\begin{align*}
+	E(X(X-1)) &= \sum_{k=1}^{\infty} k\cdot p\cdot (k-1)\cdot (1-p)^{k-1}\\
+			&= p\cdot (1-p)\cdot \sum_{k=2}^{\infty} k\cdot (k-1)(1-p)^{k-2}\\
+			&= p\x (1-p)\x \frac{2}{p^{3}}\\
+			&= \frac{2(1-p)}{p^2}
+\end{align*}
+Plugging this back into $V(X)$, we get
+\begin{align*}
+	V(X) &= E(X(X-1)) + \frac{1}{p} - \frac{1}{p^2}\\
+		&= \frac{2(1-p)}{p^2} + \frac{1}{p} - \frac{1}{p^2}\\
+		&= \frac{2 -2p +1 -1}{p^2}\\
+		&= \frac{1-p}{p^2}\\
+		&=\frac{1}{p}\x \Big(\frac{1}{p} -1\Big)
+\end{align*}
+\qed
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
