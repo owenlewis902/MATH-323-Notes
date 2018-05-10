@@ -701,6 +701,133 @@ Note that finding $V(X)$ is just a matter of finding $\frac{d^{2}}{dt^{2}}$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 10, 2018}
+\subsection{The MGF of the Geometric Distribution}
+\underline{Proposition:} Let $X$ be a random variable and suppose that $X \sim$ Geometric($p$). Then
+\[m_{X}(t) = \frac{pe^{t}}{1-(1-p)e^{t}}, \ t\ \lt\ \ln\bigg(\frac{1}{1-p}\bigg)\]
+\underline{Proof:}
+\begin{align*}
+	m_{X}(t) = E(e^{tX}) &= \sum_{n=1}^{\infty} e^{nt}p_{X}(n)\\
+					&= \sum_{n=1}^{\infty} e^{nt}(1-p)^{n-1}p\\
+					&= pe^{t}\x \sum_{n=1}^{\infty} ((1-p)e^{t})^{n-1}\\
+					&= pe^{t}\x \sum_{n=0}^{\infty} ((1-p)e^{t})^{n}\\
+					 &= \frac{pe^{t}}{1-(1-p)e^{t}}, \ t\ \lt\ \ln\bigg(\frac{1}{1-p}\bigg)
+\end{align*}
+\qed
+\subsection{The MGF of the Poisson Distribution}
+\underline{Proposition:} Let $X$ be a random variable, let $\la\ \gt\ 0$, and suppose that\\ $X \sim$ Poisson($\la$). Then
+\[m_{X}(t) = e^{\la(e^{t}-1)}\]
+\underline{Proof:}
+\begin{align*}
+	m_{X}(t) = E(e^{tX}) &= \sum_{n=0}^{\infty} e^{nt}p_{X}(n)\\
+					&= \sum_{n=0}^{\infty} e^{nt}e^{-\la}\x \frac{\la^{n}}{n!}\\
+					&= e^{-\la}\x \sum_{n-0}^{\infty}\frac{(\la e)^{n}}{n!}\\
+					&= e^{-\la}e^{\la e^{t}},\ \forall\ t \in \R\\
+			m_{X}(t) &= e^{\la(e^{t}-1)},\ t \in \R
+\end{align*}
+\qed\\\\
+\textbf{Ex:} Let $X$ be the random variable containing the number of defects in a fabric. Suppose $X \sim$ Poisson($\la=4$). The company pays a cost C of $C := 3^{X}$ for each defect. Find the expected cost.\\
+\textbf{Solution:} We want to find $E(3^{X})$.
+\begin{align*}
+	E(3^{X}) &= m_{X}(t=\ln(3))\\
+			&= e^{4(e^{\ln{3}}-1)}\\
+			&= e^{4\x 2}\\
+			&= e^{8}
+\end{align*}
+\subsection{Chebyshev's Inequality}
+\underline{Theorem:} Let $X$ be a random variable, let $E(X) := \mu$, and let $V(X) := \sigma^{2}$. Then
+\[\bbP(|x-\mu|\ \geq\ k\sigma)\ \leq\ \frac{1}{k^{2}}\]
+\underline{Lemma:} (*) If $X_{1}$, $X_{2}$ are random variables with $X_{1}\ \geq\  X_{2}$, then
+\[E(X_{1}) \geq E(X_{2})\]
+\underline{Proof of (*):} We will prove this in chapter 5.\\\\
+\underline{Proof:} Let $Y$ be an arbitrary random variable such that $E(Y) = 0$, and such that $V(Y) = 0$. Let $k \in \R$ be fixed. We want to show that
+\[\bbP(|Y|\ \geq\ k\sigma)\ \leq\ \frac{1}{k^{2}}\]
+Let $Z$ be a random variable such that:
+\[Z :=
+\begin{cases}
+	1, &\text{if}\ |Y|\ \geq\ k\sigma\\
+	0, &\text{otherwise}
+\end{cases}\]
+Therefore
+\begin{align*}
+	&\ \ \ \ \ |Y|\ \geq\ (k\sigma)\x Z\\
+	&\imply |Y|^{2}\ \geq\ (k^{2}\sigma^{2})\x Z^{2}\\
+	&\imply |Y|^{2}\ \geq\ (k^{2}\sigma^{2})\x Z\\
+	&\imply E(Y^{2})\ \geq\ E((k^{2}\sigma^{2})\x Z)\\
+	&\imply E(Y^{2})\ \geq\ k^{2}\sigma^{2}\x E(Z)\\
+	&\imply E(Y^{2})\ \geq\ k^{2}\sigma^{2}\x \bbP(|Y|\ \geq\ k\sigma)\\
+	&\imply \frac{E(Y^{2})}{k^{2}\sigma^{2}}\ \geq\ \bbP(|Y|\ \geq\ k\sigma)\\
+	&\imply \frac{1}{k^{2}}\ \geq\ \bbP(|Y|\ \geq\ k\sigma)\\
+\end{align*}
+Since $Y$ was arbitrary, we conclude that if we set $Y := X-\mu$, then we have
+\[\bbP(|X-\mu|\ \geq\ k\sigma)\ \leq \frac{1}{k^{2}}\]
+\qed
+\subsection{The Cumulative Distribution Function}
+The \ti{Cumulative Distribution Function}. Let $X$ be a random variable. The cuumulative distribution function (cdf) is defined as
+\[F_{X}(x) = \bbP(X \leq x)\]\\
+\textbf{Ex:} Let $X$ be a discrete random variable whose probability function is given by the table
+\begin{center}
+\begin{tabular}{| c || c | c | c |}
+\hline
+$x$ & -1 & 0 & 2\\
+\hline
+$\bbP(X=x)$ & $\frac{1}{2}$ & $\frac{1}{3}$ & $\frac{1}{6}$\\
+\hline
+\end{tabular}
+\end{center} 
+This gives us the cumulative distribution function $F_{X}(x)$
+\[ F_{X}(x) =
+\begin{cases}
+	0, &\text{if}\ x\ \lt\ -1\\
+	\frac{1}{2}, &\text{if}\ -1\ \leq\ x\ \lt\ 0\\
+	\frac{5}{6}, &\text{if}\ 0\ \leq\ x\ \lt\ 2\\
+	\frac{1}{2}, &\text{if}\ x\ \geq\ 2\\
+\end{cases}
+\]
+Note that in this case $F_{X}(x)$ is a right-continuous nondecreasing step-function, such that $\lim_{x\to-\infty} F_{X}(x) = 0$, and $\lim_{x\to\infty} F_{X}(x) = 1$.
+\subsection{Continuous Random Variables}
+A random variable $X$ is said to be \ti{continuous} if its cumulative distribution function $F_{X}(x)$ is a continuously nondecreasing function such that $\lim_{x\to-\infty} F_{X}(x) = 0$, and $\lim_{x\to\infty} F_{X}(x) = 1$.
+\subsection{Computing Probability with the Cumulative Distribution Function}
+$\bbP(a \leq X \leq b) = \bbP(X \leq b) - \bbP(X \lt a)$.\\
+Note that $\bbP(X=a) = 0 \imply \bbP(X\lt a) = \bbP(X\leq a) = F_{X}(a)$, where $F_{X}$ is the cumulative distribution function of a random variable $X$, so
+\begin{align*}
+	\bbP(a \leq X \leq b) &= F_{X}(b) - F_{X}(a)\\
+					&= \bbP(a \leq X \lt b)\\
+					&= \bbP(a \lt X \leq b)\\
+					&= \bbP(a \lt X \lt b)
+\end{align*}
+Note that $\bbP(X \geq a) = \bbP(X \gt a) = 1-F_{X}(a)$\\\\
+\textbf{Ex 1:} Let $X$ be a random variable, and let
+\[F_{X}(x) = \frac{2}{\pi}\Big(\tan^{-1}(x) + \frac{\pi}{2}\Big)\]
+In this case, $F_{X}(x)$ is not a cumulative distribution function because $\lim{x\to\infty} = 2$. However
+\[F_{X}(x) = \frac{1}{\pi}\Big(\tan^{-1}(x) + \frac{\pi}{2}\Big)\] indeed is a cumulative distribution function.\\\\
+In the above example, the random variable $X$ for which $F_{X}$ is a cumulative distribution function, is said to have the \ti{Cauchy distribution}.\\\\
+\textbf{Ex 2:} Let $X$ be a random variable with the Cauchy distribution.\\
+Find $\bbP(X \geq 1)$, and $\bbP(-1 \leq X \leq 1)$.\\
+\textbf{Solution:} To find $\bbP(X \geq 1)$ we do
+\[\bbP(X \geq 1) = 1-F_{X}(1) = 1-\frac{3}{4} = \frac{1}{4}\]
+and to find $\bbP(-1 \leq X \leq 1)$ we do
+\[\bbP(-1 \leq X \leq 1) = F_{X}(1) - F_{X}(-1) = \frac{1}{2}\]\\
+\underline{Theorem:} If $F$ is a cumulative distribution function, then $F$ is differentiable almost everywhere.\\
+\underline{Proof:} Take honours analysis 4 lol.
+\subsection{Probability Density Function}
+Let $F$ be a cumulative distribution function, let $X$ be a random variable, and let $f : \R \to \R$ be a function such that $f(x) = F'(x)$. Then if, $f(x) \geq 0$, and $\int_{-\infty}^{\infty} f(x)\ dx=1$, then $f$ is called a \ti{probability density function} of $X$. The cumulative distribution function of $X$ is given by $F_{X}(x) = \int_{-\infty}^{x} f(t)\ dt$.\\\\
+\textbf{Ex 1:} The Cauchy distribution
+\[F_{X}(x) = \frac{1}{\pi}\Big(\tan^{-1}(x) + \frac{\pi}{2}\Big)\]
+has a probability density function given by
+\[f(x) = F'_{x}(x) = \frac{1}{\pi}\x \frac{1}{1 + x^2}, \ \forall\ x \in \R\]\\
+\textbf{Ex 2:} Consider the function $f : \R \to \R$ given by
+\[f(x) =
+\begin{cases}
+	cx^{2}e^{-2x}, &\text{if}\ x\ \gt\ 0\\
+	0, &\text{otherwise}
+\end{cases}\]
+Find $c$ such that $f$ is a probability density function.\\
+\textbf{Solution:} If $f$ is a probability density function, then $c$ is such that
+\begin{align*}
+c\int_{0}^{\infty} x^{2}e^{-2x}\ dx &= 1
+\intertext{which implies that}
+							c &= \frac{1}{\int_{0}^{\infty} x^{2}e^{-2x}\ dx}
+\end{align*}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

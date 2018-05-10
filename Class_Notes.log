@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.12)  9 MAY 2018 18:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.12)  10 MAY 2018 18:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -553,7 +553,167 @@ Underfull \hbox (badness 10000) in paragraph at lines 684--687
 
  []
 
-[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40]
+[28]
+
+LaTeX Warning: Command \textless invalid in math mode on input line 706.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 706.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 714.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 714.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 714.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 714.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 717.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 717.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--730
+
+ []
+
+[29]
+Underfull \hbox (badness 10000) in paragraph at lines 740--743
+
+ []
+
+[30]
+
+LaTeX Warning: Command \textless invalid in math mode on input line 780.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 780.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 781.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 781.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 782.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 782.
+
+
+Overfull \hbox (1.69777pt too wide) in paragraph at lines 788--789
+\OT1/cmr/m/n/10 tion $\OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\O
+T1/cmr/m/n/10 )$ is a con-tin-u-ously non-de-creas-ing func-tion such that $[][
+] \OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 x\OT1/cmr/m/n/10 ) =
+ []
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 790.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 790.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 791.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 791.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 797.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 798.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 798.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 797--800
+
+ []
+
+[31]
+Overfull \hbox (4.8802pt too wide) in paragraph at lines 800--802
+\OT1/cmr/m/n/10 In this case, $\OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/
+it/10 x\OT1/cmr/m/n/10 )$ is not a cu-mu-la-tive dis-tri-bu-tion func-tion be-c
+ause $[] [] =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--807
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 802--807
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--815
+
+ []
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 821.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 821.
+
+[32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
 (./Class_Notes.aux) ) 
 Here is how much of TeX's memory you used:
  2533 strings out of 494945
@@ -581,10 +741,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Class_Notes.pdf (41 pages, 300570 bytes).
+Output written on Class_Notes.pdf (45 pages, 313748 bytes).
 PDF statistics:
- 217 PDF objects out of 1000 (max. 8388607)
- 151 compressed objects within 2 object streams
+ 230 PDF objects out of 1000 (max. 8388607)
+ 160 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

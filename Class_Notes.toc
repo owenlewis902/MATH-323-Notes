@@ -41,14 +41,21 @@
 \contentsline {subsection}{\numberline {6.3}Moment Generating Functions}{26}
 \contentsline {subsection}{\numberline {6.4}The MGF of the Binomial Distribution}{28}
 \contentsline {section}{\numberline {7}May 10, 2018}{29}
-\contentsline {section}{\numberline {8}May 14, 2018}{30}
-\contentsline {section}{\numberline {9}May 16, 2018}{31}
-\contentsline {section}{\numberline {10}May 17, 2018}{32}
-\contentsline {section}{\numberline {11}May 21, 2018}{33}
-\contentsline {section}{\numberline {12}May 22, 2018}{34}
-\contentsline {section}{\numberline {13}May 23, 2018}{35}
-\contentsline {section}{\numberline {14}May 24, 2018}{36}
-\contentsline {section}{\numberline {15}May 28, 2018}{37}
-\contentsline {section}{\numberline {16}May 29, 2018}{38}
-\contentsline {section}{\numberline {17}May 30, 2018}{39}
-\contentsline {section}{\numberline {18}May 31, 2018}{40}
+\contentsline {subsection}{\numberline {7.1}The MGF of the Geometric Distribution}{29}
+\contentsline {subsection}{\numberline {7.2}The MGF of the Poisson Distribution}{29}
+\contentsline {subsection}{\numberline {7.3}Chebyshev's Inequality}{30}
+\contentsline {subsection}{\numberline {7.4}The Cumulative Distribution Function}{31}
+\contentsline {subsection}{\numberline {7.5}Continuous Random Variables}{31}
+\contentsline {subsection}{\numberline {7.6}Computing Probability with the Cumulative Distribution Function}{31}
+\contentsline {subsection}{\numberline {7.7}Probability Density Function}{32}
+\contentsline {section}{\numberline {8}May 14, 2018}{34}
+\contentsline {section}{\numberline {9}May 16, 2018}{35}
+\contentsline {section}{\numberline {10}May 17, 2018}{36}
+\contentsline {section}{\numberline {11}May 21, 2018}{37}
+\contentsline {section}{\numberline {12}May 22, 2018}{38}
+\contentsline {section}{\numberline {13}May 23, 2018}{39}
+\contentsline {section}{\numberline {14}May 24, 2018}{40}
+\contentsline {section}{\numberline {15}May 28, 2018}{41}
+\contentsline {section}{\numberline {16}May 29, 2018}{42}
+\contentsline {section}{\numberline {17}May 30, 2018}{43}
+\contentsline {section}{\numberline {18}May 31, 2018}{44}
