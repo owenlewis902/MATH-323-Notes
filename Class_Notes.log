@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.12)  15 MAY 2018 12:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.12)  15 MAY 2018 13:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -135,7 +135,7 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-No file Class_Notes.aux.
+(./Class_Notes.aux)
 \openout1 = `Class_Notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
@@ -150,6 +150,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
 LaTeX Font Info:    ... okay on input line 35.
+
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count100
@@ -223,12 +224,11 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 37.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-No file Class_Notes.toc.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./Class_Notes.toc [1])
 \tf@toc=\write3
 \openout3 = `Class_Notes.toc'.
 
-[1]
+ [2]
 Underfull \hbox (badness 10000) in paragraph at lines 47--56
 
  []
@@ -259,12 +259,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 61--65
 
  []
 
-[2]
+[3]
 Underfull \hbox (badness 10000) in paragraph at lines 76--87
 
  []
 
-[3] [4]
+[4] [5]
 Underfull \hbox (badness 10000) in paragraph at lines 124--129
 
  []
@@ -274,23 +274,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 124--129
 
  []
 
-[5]
+[6]
 
 Package amsmath Warning: Foreign command \atopwithdelims;
 (amsmath)                \frac or \genfrac should be used instead
 (amsmath)                 on input line 145.
 
-[6]
+[7]
 Underfull \hbox (badness 10000) in paragraph at lines 170--171
 
  []
 
-<pics/pascal.png, id=39, 578.16pt x 513.92pt>
+<pics/pascal.png, id=42, 578.16pt x 513.92pt>
 File: pics/pascal.png Graphic file (type png)
  <use pics/pascal.png>
 Package pdftex.def Info: pics/pascal.png used on input line 172.
 (pdftex.def)             Requested size: 289.07928pt x 256.95937pt.
- [7 <./pics/pascal.png>]
+ [8 <./pics/pascal.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 181--185
 
  []
@@ -319,7 +319,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 196--202
 
  []
 
-[8]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 209--217
 
  []
@@ -344,7 +344,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
 
-[9] [10]
+[10] [11]
 Underfull \hbox (badness 10000) in paragraph at lines 267--274
 
  []
@@ -359,7 +359,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--277
 
  []
 
-[11]
+[12]
 Underfull \hbox (badness 10000) in paragraph at lines 289--291
 
  []
@@ -369,7 +369,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 297--300
 
  []
 
-[12] [13] [14]
+[13] [14] [15]
 
 LaTeX Warning: Command \textless invalid in math mode on input line 354.
 
@@ -413,22 +413,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 386--388
 
  []
 
-[15]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 415--418
 
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 445--449
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--449
-
- []
-
 [17]
+Underfull \hbox (badness 10000) in paragraph at lines 445--449
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 445--449
+
+ []
+
+[18]
 
 LaTeX Warning: Command \textless invalid in math mode on input line 452.
 
@@ -440,7 +440,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 462--465
 
  []
 
-[18] [19] [20]
+[19] [20] [21]
 Underfull \hbox (badness 10000) in paragraph at lines 508--514
 
  []
@@ -450,44 +450,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 519--521
 
  []
 
-[21]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 551--555
 
  []
 
-[22]
-
-LaTeX Warning: Command \textless invalid in math mode on input line 586.
-
-
-LaTeX Warning: Command \textless invalid in math mode on input line 586.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 581--590
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 581--590
-
- []
-
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 612--614
+
+LaTeX Warning: Command \textless invalid in math mode on input line 586.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 586.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 581--590
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 612--614
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 612--614
+Underfull \hbox (badness 10000) in paragraph at lines 581--590
 
  []
 
 [24]
+Underfull \hbox (badness 10000) in paragraph at lines 612--614
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--614
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 612--614
+
+ []
+
+[25]
 Underfull \hbox (badness 10000) in paragraph at lines 616--619
 
  []
@@ -507,7 +507,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 647--650
 
  []
 
-[25]
+[26]
 Underfull \hbox (badness 10000) in paragraph at lines 659--661
 
  []
@@ -548,12 +548,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 672--674
 
  []
 
-[26]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 685--688
 
  []
 
-[27]
+[28]
 
 LaTeX Warning: Command \textless invalid in math mode on input line 707.
 
@@ -583,12 +583,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 727--731
 
  []
 
-[28]
+[29]
 Underfull \hbox (badness 10000) in paragraph at lines 741--744
 
  []
 
-[29]
+[30]
 
 LaTeX Warning: Command \textless invalid in math mode on input line 781.
 
@@ -685,7 +685,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 798--801
 
  []
 
-[30]
+[31]
 Overfull \hbox (4.8802pt too wide) in paragraph at lines 801--803
 \OT1/cmr/m/n/10 In this case, $\OML/cmm/m/it/10 F[]\OT1/cmr/m/n/10 (\OML/cmm/m/
 it/10 x\OT1/cmr/m/n/10 )$ is not a cu-mu-la-tive dis-tri-bu-tion func-tion be-c
@@ -713,7 +713,7 @@ LaTeX Warning: Command \textgreater invalid in math mode on input line 822.
 
 LaTeX Warning: Command \textgreater invalid in math mode on input line 822.
 
-[31] [32] [33]
+[32] [33] [34]
 
 LaTeX Warning: Command \textgreater invalid in math mode on input line 845.
 
@@ -746,16 +746,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 869--877
 
  []
 
-[34]
+[35]
 Underfull \hbox (badness 10000) in paragraph at lines 892--895
 
  []
 
-[35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] (./Class_Notes.aux)
+[36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] (./Class_Notes.aux)
  ) 
 Here is how much of TeX's memory you used:
- 2530 strings out of 494945
- 33198 string characters out of 6181031
+ 2534 strings out of 494945
+ 33262 string characters out of 6181031
  94084 words of memory out of 5000000
  5780 multiletter control sequences out of 15000+600000
  14214 words of font info for 53 fonts, out of 8000000 for 9000
@@ -779,10 +779,10 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Class_Notes.pdf (47 pages, 315265 bytes).
+Output written on Class_Notes.pdf (48 pages, 319248 bytes).
 PDF statistics:
- 236 PDF objects out of 1000 (max. 8388607)
- 164 compressed objects within 2 object streams
+ 239 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
