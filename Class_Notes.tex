@@ -26,6 +26,7 @@
 \newcommand{\gt}{\textgreater}
 \newcommand{\imply}{\Rightarrow}
 \newcommand{\x}{\cdot}
+\newcommand{\Ga}{\Gamma}
 
 \title{MATH 323 Class Notes}
 \author{Owen Lewis}
@@ -833,6 +834,74 @@ c\int_{0}^{\infty} x^{2}e^{-2x}\ dx &= 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 14, 2018}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{May 15, 2018}
+\subsection{The Gamma Function}
+The Gamma function is defined as
+\[\Ga(\alpha) = \int_{0}^{\infty} t^{\alpha-1}e^{-t} dt\]
+Note that for our purposes, $\Ga$ is defined if and only if $\alpha\ \gt\ 0$ as
+\[\int_{0}^{\infty} t^{\alpha-1}e^{-t} dt = \int_{0}^{1} t^{\alpha-1}e^{-t} dt + \int_{1}^{\infty} t^{\alpha-1}e^{-t} dt\]
+where
+\[\int_{0}^{1} t^{\alpha-1}e^{-t} dt\]
+converges iff $\alpha\ \gt\ 0$
+and
+\[\int_{1}^{\infty} t^{\alpha-1}e^{-t} dt\]
+converges $\forall \alpha \in \R$, and thus $\Ga$ converges for only positive $\alpha$.
+\subsection{Properties of the Gamma function}
+\textbf{Properties}
+\begin{enumerate}
+	\item $\Ga(1) = 1$
+	\item $\Ga(\alpha + 1) = \alpha \Ga(\alpha)$
+	\item If $n \in \N$ then $\Ga(n) = (n-1)!$
+	\item $\Ga\big(\frac{1}{2}\big)$ = $\sqrt{\pi}$
+\end{enumerate}
+\textbf{Proof of 1}: Just evaluate the integral lol
+\qed\\\\
+\textbf{Proof of 2:}
+\begin{align*}
+	\Ga(\alpha +1) &= \int_{0}^{\infty} t^{\alpha}e^{-t} dt\\
+	\intertext{Do one iteration of integration by parts}\\
+				&= \alpha \int_{0}^{\infty} t^{\alpha-1}e^{-t} dt\\
+				&= \alpha \Ga(\alpha)
+\end{align*}
+\qed\\\\
+\textbf{Proof of 3:} The proof of this is pretty easy and I don't want to bother with typing it up. It's just induction on $n$.
+\qed\\\\
+\textbf{Proof of 4:} We'll prove this in class later, but it probably has something to do with integrating in polar coordinates. 
+\qed\\\\
+\textbf{Ex:} Find $\Ga\big(\frac{7}{2}\big)$\\
+\textbf{Solution:}
+\begin{align*}
+	\Ga\bigg(\frac{7}{2}\bigg) &= \frac{5}{2}\x\Ga\bigg(\frac{5}{2}\bigg)\\
+						&= \frac{5}{2}\x\frac{3}{2}\x\Ga\bigg(\frac{3}{2}\bigg)\\
+						&= \frac{5}{2}\x\frac{3}{2}\x\frac{1}{2}\x\Ga\bigg(\frac{1}{2}\bigg)\\
+						&= \frac{15\sqrt{\pi}}{8}
+\end{align*}
+\subsection{Some More General Applications of $\Ga$}
+\textbf{First Application:}
+\[\Ga\bigg(\frac{2n+1}{2}\bigg) = \frac{\sqrt{\pi}}{n^{n}}\x \frac{(2n-1)!}{2^{n-1}(n-1)!}\]
+\textbf{Proof:}
+\begin{align*}
+\Ga\bigg(\frac{2n+1}{2}\bigg) &= \Ga\bigg(\frac{1}{2}\bigg)\x \frac{1}{2} \x \frac{3}{2}\x \dots \x \frac{2n-1}{2}\\
+						&= \frac{\sqrt{\pi}}{2^{n}}\x 1\x 3\x 5\x \dots \x (2(n-1)-1)\\
+						&= \frac{\sqrt{\pi}}{2^{n}}\x \frac{(2n-1)!}{2\x 4\x \dots\x 2(n-1)}\\
+						&= \frac{\sqrt{\pi}}{n^{n}}\x \frac{(2n-1)!}{2^{n-1}(n-1)!}\\
+\end{align*}
+\qed\\\\
+\textbf{Second Application:}
+\[\int_{0}^{\infty} t^{a}e^{-bt} dt = \frac{\Ga(a+1)}{b^{a+1}}\]
+\textbf{Ex:} Solve the improper integral
+\[\int_{0}^{\infty} t^{10}e^{-4t} dt\]
+\textbf{Solution:} Using the above equation we have
+\begin{align*}
+\int_{0}^{\infty} t^{10}e^{-4t} dt & =  \frac{\Ga(11)}{4^{11}}\\
+							& =  \frac{\Ga(10+1)}{4^{10+1}}\\
+							& =  \frac{\Ga(11)}{4^{11}}\\
+							& =  \frac{10!}{4^{11}}
+\end{align*}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
