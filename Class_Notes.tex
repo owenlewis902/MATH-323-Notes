@@ -834,6 +834,184 @@ c\int_{0}^{\infty} x^{2}e^{-2x}\ dx &= 1
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 14, 2018}
+\subsection{More on CDFs and PDFs}
+Suppose $X$ is a continuous random variable. The distribution of $X$ is defined by either its cumulative distribution function $F_{X}$ or its probability density function $f_{X}$, where of course the relationship between the two is
+\[F'_{X} = f_{X}\]
+We define the \ti{support of the distribution}  to be the set
+\[\{x\in \R : f_{X}(x)\ \gt\ 0\}\]
+\textbf{Ex:} Consider the CDF
+\[
+f_{X}(x) =
+\begin{cases}
+	1, &\text{if}\ x \in\ ]0, 1[\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Then $f_{X}(x) \geq 0$, the support of the distribution is the interval ]0, 1[, and
+\[\int_{-\infty}^{\infty}f_{X}(x)\ dx = \int_{0}^{1} f_{X}(x)\ dx = 1\]\\
+\textbf{Proposition:} Let $X$ be a continuous random variable and $f_{X}$ be its PDF. Set $Y := aX + b$, $a \neq 0$. Then, the PDF of $Y$ is
+\[f_{Y}(y) = \frac{1}{|a|}f_{X}\bigg(\frac{y-b}{a}\bigg)\]
+\textbf{Proof:} Let $F_{X}$ be the CDF of $X$. The CDF of $Y$ is then
+\[F_{Y}(y) = \bbP(Y\leq y) = \bbP(aX + b \leq y) = \bbP\bigg(X \leq \frac{y-b}{a}\bigg) = F_{X}\bigg(\frac{y-b}{a}\bigg)\]
+The PDY of $Y$ is thus
+\[f_{Y}(y) = F'_{Y}(y) = \frac{1}{a} f_{X}\bigg(\frac{y-b}{a}\bigg)\]
+\qed
+\subsection{Expected Value of a Continuous Random Variable}
+Let $X$ be a continuous random variable and $f_{X}(x)$ be its PDF. If $g : \R \to \R$ is a function, then
+\[E(g(x)) = \int_{-\infty}^{\infty}g(x)f_{X}(x)\ dx\]
+if and only if the integral converges. In particular, as in the discrete case
+\[E(X) = \int_{-\infty}^{\infty} xf_{X}(x)\ dx\]
+\subsection{Variance of a Continuous Random Variable}
+Let $\mu := E(X)$. Much like with discrete random varibales, we define the variance of a function, $V(X)$, as
+\[V(X) = E((X-\mu)^{2})\]
+in particular
+\[V(X) = \int_{-\infty}^{\infty} (x-\mu)^{2}f_{X}(x)\ dx\]
+\subsection{Properties of $E(X)$ and $V(X)$}
+The proofs to all these properties are analagous to the proofs to the same properties in the discrete case. If $X$ is a continuous random variable then
+\begin{enumerate}
+	\item $E(aX+b) = aE(X) + b$
+	\item If $g$, and $h$ are functions then
+		\begin{itemize}
+			\item $E(g(x) + h(x)) = E(g(x)) + E(h(x))$, and
+			\item $E(\alpha g(x)) = \alpha E(g(x))$
+		\end{itemize} 
+	\item $V(X) = E(X^2) - (E(X))^2$
+	\item $V(aX+b) = a^{2}V(X)$
+\end{enumerate}
+\ \\
+\textbf{Ex 1:} Consider the following function
+\[
+F_{X}(x) =
+\begin{cases}
+	cx^2 &\text{if}\ x \in\ ]0, 1[\\
+	0 &\text{otherwise}
+\end{cases}
+\]
+Find $c$ so that $f_{X}$ is a PDF and find $E(X)$, and $V(X)$.\\\\
+\textbf{Solution} If $f_{X}$ is a PDF then
+\begin{align*}
+	1 &= \int_{-\infty}^{\infty} f_{X}(x)\ dx\\
+	 &= \int_{-\infty}^{\infty} cx^2\ dx\\
+	1 &= \frac{c}{3}\\
+	c &= 3
+\end{align*}
+To find $E(X)$ we do
+\begin{align*}
+	E(X) &= \int_{-\infty}^{\infty} xf_{X}(x)\ dx\\
+		&= \int_{0}^{1} x3x^{2}\ dx\\
+		&= 3\int_{0}^{1} x^{3}\ dx\\
+		&= \frac{3}{4}
+\end{align*}
+To find $V(X)$ we first must find $E(X^2)$
+\begin{align*}
+	E(X^2) &= \int_{-\infty}^{\infty} x^{2}f_{X}(x)\ dx\\
+		&= \int_{0}^{1} x^{2}3x^{2}\ dx\\
+		&= 3\int_{0}^{1} x^{4}\ dx\\
+		&= \frac{3}{5}
+\end{align*}
+and so finally
+\begin{align*}
+	V(X) &= E(X^2) - (E(X))^2\\
+		&= \frac{3}{5} - \frac{9}{16}\\
+		&= \frac{3}{80}
+\end{align*}
+\ \\
+\textbf{Ex 2:} Find $E(X)$ of the Cauchy distribution.\\\\
+\textbf{Solution:} The Cauchy distribution is given by
+\[f_{X}(x) = \frac{1}{\pi}\x \frac{x}{1+x^2}\]
+for $x \in \R$. Therefore E(X) is given by
+\[E(X) = \int_{-\infty}^{\infty} \frac{1}{\pi}\x \frac{x}{1+x^2}\x dx\]
+but that diverges, and thus $E(X)$ does not exist.
+\subsection{Uniform Distribution Over an Open Interval}
+Let $a, b \in \R$ such that $b\ \gt\ a$. A continuous random variable $X$ is said to have a uniform distribution over the interval ]$a, b$[ if the cumulative distribution function of $X$ is given by
+\[
+F_X(x) =
+\begin{cases}
+	0 &\text{if}\ x \leq a\\
+	\frac{x-a}{x-b} &\text{if}\ a \leq x \leq b\\
+	1 &\text{if}\ x \geq b
+\end{cases}
+\]
+If we take the derivative of that we see the PDF of a uniformly distributed random variable is
+\[
+f_{X}(x) =
+\begin{cases}
+	\frac{1}{b-a} &\text{if}\ x\in\ ]a, b[\\
+	0 &\text{otherwise}
+\end{cases}
+\]\\
+If $X$ has a uniform distribution then we write $X \sim$ Uniform($a, b$).\\\\
+\textbf{Remark 1:} If $a \subseteq a_{1} \leq b_{1} \subseteq b$ then $\bbP(a_{1} \leq X \leq b_{1})$ = $F_{X}(b_{1}) - F_{X}(a_{1})$\\\\
+\textbf{Remark 2:} $F_{X}(b_{1}) - F_{X}(a_{1}) = \frac{b_{1} - a_{1}}{b-a} = \frac{\text{length}(a_{1}, b_{1})}{\text{length}(a, b)}$\\\\
+\textbf{Remark 3:} If $I \subset \R$ is an interval then $\bbP(X\in I) = \frac{\text{length}(I \cap (a, b))}{b-a}$.\\\\\\
+\textbf{Ex:} Suppose $X \sim$ Uniform($a, b$). Find $\bbP(X \geq 6)$.\\
+\textbf{Solution:} $\bbP(X \geq 6) = \frac{10-6}{10-2} = \frac{4}{8} = \frac{1}{2}$\\\\
+\textbf{Proposition:} If $X \sim$ Uniform($a, b$), then $X = (b-1)U + a$, where we define $U$ as $U \sim$ Uniform(0, 1).\\
+\textbf{Proof:} Suppose $X \sim$ Uniform($a, b$). Then we set $U = \frac{1}{b-a}(x-a)$. We want to show that $U \sim$ Uniform($0, 1$). Note that the PDF of $U$ is given by
+\begin{align*}
+	f_{u}(u) &= \frac{1}{\frac{1}{b-a}}f_{X}((b-a)u + a)\\
+			&= (b-a)f_{X}((b-a)u + a)\\
+\intertext{Recall that}
+\ f_{X}(x) &=
+\begin{cases}
+	\frac{1}{b-a} &\text{if}\ a\ \lt\ x\ \lt\ b\\
+	0 &\text{otherwise}
+\end{cases}
+\intertext{so applying this to $U$ we get}
+\ f_{U}(u) &=
+\begin{cases}
+	\frac{b-a}{b-a} &\text{if}\ a\ \lt\ (b-a)u + a\ \lt\ b\\
+	0 &\text{otherwise}
+\end{cases}
+\ \\
+&=
+\begin{cases}
+	1 &\text{if}\ a\ \lt\ u\ \lt\ b\\
+	0 &\text{otherwise}
+\end{cases}
+\end{align*}
+And thus $U \sim$ Uniform(0, 1).
+\qed\\\\
+\textbf{Proposition:} If a continiuous random variable $X \sim$ Uniform($a, b$), then
+\begin{enumerate}
+	\item $E(X) = \frac{a+b}{2}$
+	\item $V(X) = \frac{(b-a)^{2}}{12}$
+\end{enumerate}
+\textbf{Proof:} The proof follows directly from the definitions. I don't wanna type them.
+\subsection{Normal Distribution}
+A continuous random variable $X$ is said to that a \ti{normal distribution} with parameters $\mu$, $\sigma^{2}$ if the PDF of $X$ is given by
+\[f_{X}(x) = \frac{1}{\sigma\sqrt{2\pi}}e^{-\big(\frac{(x-\mu)^{2}}{2\pi^{2}}\big)}\]
+for $x \in \R$. We write $X \sim$ N($\mu, \sigma^{2}$)\\\\
+If a continuous random variable $Z$ is given by $Z \sim$ N($\mu=0,\ \sigma^2=1$) we say that $Z$ has the \ti{standard normal distribution}. The PDF of $Z$ is then given by
+\[f_{Z}(z) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}z^{2}}\]
+for $z \in \R$.\\\\
+\textbf{Proposition:} If $X \sim$ N($\mu, \sigma^{2}$) then $X = \sigma Z + \mu$ where $Z \sim$ N($\mu=0,\ \sigma^2=1$).
+\textbf{Proof:} Like all proofs for this class, it's pretty straightforward.\\\\
+\textbf{Remark:} If $X \sim$ N($\mu, \sigma^{2}$) then
+\begin{align*}
+	F_{X}(x) &= \bbP(X \leq x)\\
+			&= \bbP(\sigma Z + \mu \leq x)\\
+			&= \bbP\bigg(Z \leq \frac{x-\mu}{\sigma}\bigg)\\
+			&= F_{Z}\bigg(\frac{x-\mu}{\sigma}\bigg)
+\end{align*}
+\ \\
+The above implies that if we know $F_{Z}$ then we can easily figure out $F_{X}$ for all $X \sim$ N($\mu, \sigma^{2}$)! Since $F_{Z}$ is pretty special we give it its own symbol. We denote $F_Z$ by $\Phi$ where
+\[\Phi(x) = \int_{-\infty}^{x} \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}t^{2}}\ dt\]\\\\\\
+\textbf{Properties of $\Phi$}
+\begin{enumerate}
+	\item $\Phi$(0) = $\frac{1}{2}$
+	\item $\Phi$(x) + $\Phi$(-x)= 1
+\end{enumerate}
+\ \\
+\textbf{Proposition:} If $X \sim$ N($\mu, \sigma^{2}$)
+\begin{enumerate}
+	\item $E(X) = \mu$
+	\item $V(X) = \sigma^{2}$
+\end{enumerate}
+\textbf{Proof:} Recall that $X = \sigma Z + \mu$, where $Z \sim$ N($\mu=0,\ \sigma^{2}=1$). The remainder of the proof follows immediately from the fact that $E(Z) = 0$, and $V(Z)=1$. I'll show that $E(Z) =0$ but the remainder is just integration by parts.
+\[E(Z) = \int_{-\infty}^{\infty} \frac{z}{\sqrt{2\pi}}e^{-\frac{1}{2}z^{2}}\ dz\]
+Note that this is an odd function on a symmetric domain and so the integral evaluates to 0. That's an easy enough thing to prove but that's not the point of this class so I won't do it.
+\qed
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.12)  15 MAY 2018 13:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.10.12)  16 MAY 2018 19:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -713,45 +713,200 @@ LaTeX Warning: Command \textgreater invalid in math mode on input line 822.
 
 LaTeX Warning: Command \textgreater invalid in math mode on input line 822.
 
-[32] [33] [34]
+[32] [33]
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 845.
-
-
-LaTeX Warning: Command \textgreater invalid in math mode on input line 845.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 841.
 
 
-LaTeX Warning: Command \textgreater invalid in math mode on input line 849.
+LaTeX Warning: Command \textgreater invalid in math mode on input line 841.
 
-
-LaTeX Warning: Command \textgreater invalid in math mode on input line 849.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 861--864
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 869--877
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 869--877
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 869--877
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 889--892
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 892--895
+Underfull \hbox (badness 10000) in paragraph at lines 917--921
 
  []
 
-[36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47] (./Class_Notes.aux)
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 926.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 926.
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 942--951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 942--951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 942--951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 942--951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 942--951
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 942--951
+
+ []
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+LaTeX Warning: Command \textless invalid in math mode on input line 972.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 972--976
+
+ []
+
+[37]
+Underfull \hbox (badness 10000) in paragraph at lines 983--986
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 986--991
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 986--991
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 999--1001
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 999--1001
+
+ []
+
+[38] [39]
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 1023.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 1023.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 1027.
+
+
+LaTeX Warning: Command \textgreater invalid in math mode on input line 1027.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1039--1042
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1055
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1055
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1047--1055
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1073
+
+ []
+
+[41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51] [52] (./Class_Notes.aux)
  ) 
 Here is how much of TeX's memory you used:
  2534 strings out of 494945
@@ -760,7 +915,7 @@ Here is how much of TeX's memory you used:
  5780 multiletter control sequences out of 15000+600000
  14214 words of font info for 53 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,12n,26p,542b,205s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,16n,26p,542b,207s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texl
@@ -775,14 +930,15 @@ msfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texl
-ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on Class_Notes.pdf (48 pages, 319248 bytes).
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on Class_Notes.pdf (53 pages, 345186 bytes).
 PDF statistics:
- 239 PDF objects out of 1000 (max. 8388607)
- 166 compressed objects within 2 object streams
+ 259 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

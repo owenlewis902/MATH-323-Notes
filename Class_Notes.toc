@@ -49,17 +49,23 @@
 \contentsline {subsection}{\numberline {7.6}Computing Probability with the Cumulative Distribution Function}{31}
 \contentsline {subsection}{\numberline {7.7}Probability Density Function}{32}
 \contentsline {section}{\numberline {8}May 14, 2018}{34}
-\contentsline {section}{\numberline {9}May 15, 2018}{35}
-\contentsline {subsection}{\numberline {9.1}The Gamma Function}{35}
-\contentsline {subsection}{\numberline {9.2}Properties of the Gamma function}{35}
-\contentsline {subsection}{\numberline {9.3}Some More General Applications of $\Gamma $}{36}
-\contentsline {section}{\numberline {10}May 16, 2018}{38}
-\contentsline {section}{\numberline {11}May 17, 2018}{39}
-\contentsline {section}{\numberline {12}May 21, 2018}{40}
-\contentsline {section}{\numberline {13}May 22, 2018}{41}
-\contentsline {section}{\numberline {14}May 23, 2018}{42}
-\contentsline {section}{\numberline {15}May 24, 2018}{43}
-\contentsline {section}{\numberline {16}May 28, 2018}{44}
-\contentsline {section}{\numberline {17}May 29, 2018}{45}
-\contentsline {section}{\numberline {18}May 30, 2018}{46}
-\contentsline {section}{\numberline {19}May 31, 2018}{47}
+\contentsline {subsection}{\numberline {8.1}More on CDFs and PDFs}{34}
+\contentsline {subsection}{\numberline {8.2}Expected Value of a Continuous Random Variable}{34}
+\contentsline {subsection}{\numberline {8.3}Variance of a Continuous Random Variable}{35}
+\contentsline {subsection}{\numberline {8.4}Properties of $E(X)$ and $V(X)$}{35}
+\contentsline {subsection}{\numberline {8.5}Uniform Distribution Over an Open Interval}{36}
+\contentsline {subsection}{\numberline {8.6}Normal Distribution}{38}
+\contentsline {section}{\numberline {9}May 15, 2018}{40}
+\contentsline {subsection}{\numberline {9.1}The Gamma Function}{40}
+\contentsline {subsection}{\numberline {9.2}Properties of the Gamma function}{40}
+\contentsline {subsection}{\numberline {9.3}Some More General Applications of $\Gamma $}{41}
+\contentsline {section}{\numberline {10}May 16, 2018}{43}
+\contentsline {section}{\numberline {11}May 17, 2018}{44}
+\contentsline {section}{\numberline {12}May 21, 2018}{45}
+\contentsline {section}{\numberline {13}May 22, 2018}{46}
+\contentsline {section}{\numberline {14}May 23, 2018}{47}
+\contentsline {section}{\numberline {15}May 24, 2018}{48}
+\contentsline {section}{\numberline {16}May 28, 2018}{49}
+\contentsline {section}{\numberline {17}May 29, 2018}{50}
+\contentsline {section}{\numberline {18}May 30, 2018}{51}
+\contentsline {section}{\numberline {19}May 31, 2018}{52}
