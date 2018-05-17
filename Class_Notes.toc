@@ -1,71 +1,79 @@
-\contentsline {section}{\numberline {1}May 1, 2018}{3}
-\contentsline {subsection}{\numberline {1.1}Definitions}{3}
-\contentsline {subsection}{\numberline {1.2}How do we Apply this?}{4}
-\contentsline {section}{\numberline {2}May 2, 2018}{5}
-\contentsline {subsection}{\numberline {2.1}Properties of $\mathbb {P}$}{5}
-\contentsline {subsection}{\numberline {2.2}Equiprobability}{5}
-\contentsline {subsection}{\numberline {2.3}Counting Tools}{5}
-\contentsline {subsubsection}{\numberline {2.3.1}The Cartesian Product}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {paragraph}{}{6}
-\contentsline {subsubsection}{\numberline {2.3.2}Permutations}{6}
-\contentsline {subsubsection}{\numberline {2.3.3}Combinations}{7}
-\contentsline {subsection}{\numberline {2.4}Properties of Combinations}{8}
-\contentsline {subsubsection}{\numberline {2.4.1}Pascal's Triangle}{8}
-\contentsline {section}{\numberline {3}May 3, 2018}{9}
-\contentsline {subsection}{\numberline {3.1}Binomial Theorem}{9}
-\contentsline {subsection}{\numberline {3.2}Conditional Probability}{9}
-\contentsline {subsection}{\numberline {3.3}Independent Events}{10}
-\contentsline {subsection}{\numberline {3.4}Baye's Rule}{10}
-\contentsline {section}{\numberline {4}May 7, 2018}{12}
-\contentsline {subsection}{\numberline {4.1}When to use Permutations vs Combinations}{12}
-\contentsline {subsection}{\numberline {4.2}Multinomial Coefficients}{12}
-\contentsline {subsection}{\numberline {4.3}Discrete Random Variables}{12}
-\contentsline {subsection}{\numberline {4.4}Probability Distribution Representations}{13}
-\contentsline {subsection}{\numberline {4.5}Expected Value}{13}
-\contentsline {subsection}{\numberline {4.6}Expected Value of a Function of a Random Variable}{13}
-\contentsline {subsection}{\numberline {4.7}Varience of a Random Variable}{14}
-\contentsline {subsection}{\numberline {4.8}Standard Deviation of a Random Variable}{14}
-\contentsline {subsection}{\numberline {4.9}Some Theorems (without proof)}{14}
-\contentsline {subsection}{\numberline {4.10}Binomial Probability Distribution}{14}
-\contentsline {section}{\numberline {5}May 8, 2018}{16}
-\contentsline {subsection}{\numberline {5.1}Bernoulli Distribution}{16}
-\contentsline {subsection}{\numberline {5.2}Some Properties of $E$, and $V$}{16}
-\contentsline {subsection}{\numberline {5.3}A Proof that $V(X) = E(X^{2}) - (E(X))^{2}$}{17}
-\contentsline {subsection}{\numberline {5.4}More on Binomial Distribution}{17}
-\contentsline {subsection}{\numberline {5.5}Geometric Distribution}{19}
-\contentsline {section}{\numberline {6}May 9, 2018}{22}
-\contentsline {subsection}{\numberline {6.1}Hypergeometric Distribution}{22}
-\contentsline {subsubsection}{\numberline {6.1.1}The Probability Function of X}{22}
-\contentsline {subsection}{\numberline {6.2}Poisson Distribution}{23}
-\contentsline {subsection}{\numberline {6.3}Moment Generating Functions}{26}
-\contentsline {subsection}{\numberline {6.4}The MGF of the Binomial Distribution}{28}
-\contentsline {section}{\numberline {7}May 10, 2018}{29}
-\contentsline {subsection}{\numberline {7.1}The MGF of the Geometric Distribution}{29}
-\contentsline {subsection}{\numberline {7.2}The MGF of the Poisson Distribution}{29}
-\contentsline {subsection}{\numberline {7.3}Chebyshev's Inequality}{30}
-\contentsline {subsection}{\numberline {7.4}The Cumulative Distribution Function}{31}
-\contentsline {subsection}{\numberline {7.5}Continuous Random Variables}{31}
-\contentsline {subsection}{\numberline {7.6}Computing Probability with the Cumulative Distribution Function}{31}
-\contentsline {subsection}{\numberline {7.7}Probability Density Function}{32}
-\contentsline {section}{\numberline {8}May 14, 2018}{34}
-\contentsline {subsection}{\numberline {8.1}More on CDFs and PDFs}{34}
-\contentsline {subsection}{\numberline {8.2}Expected Value of a Continuous Random Variable}{34}
-\contentsline {subsection}{\numberline {8.3}Variance of a Continuous Random Variable}{35}
-\contentsline {subsection}{\numberline {8.4}Properties of $E(X)$ and $V(X)$}{35}
-\contentsline {subsection}{\numberline {8.5}Uniform Distribution Over an Open Interval}{36}
-\contentsline {subsection}{\numberline {8.6}Normal Distribution}{38}
-\contentsline {section}{\numberline {9}May 15, 2018}{40}
-\contentsline {subsection}{\numberline {9.1}The Gamma Function}{40}
-\contentsline {subsection}{\numberline {9.2}Properties of the Gamma function}{40}
-\contentsline {subsection}{\numberline {9.3}Some More General Applications of $\Gamma $}{41}
-\contentsline {section}{\numberline {10}May 16, 2018}{43}
-\contentsline {section}{\numberline {11}May 17, 2018}{44}
-\contentsline {section}{\numberline {12}May 21, 2018}{45}
-\contentsline {section}{\numberline {13}May 22, 2018}{46}
-\contentsline {section}{\numberline {14}May 23, 2018}{47}
-\contentsline {section}{\numberline {15}May 24, 2018}{48}
-\contentsline {section}{\numberline {16}May 28, 2018}{49}
-\contentsline {section}{\numberline {17}May 29, 2018}{50}
-\contentsline {section}{\numberline {18}May 30, 2018}{51}
-\contentsline {section}{\numberline {19}May 31, 2018}{52}
+\contentsline {section}{\numberline {1}May 1, 2018}{4}
+\contentsline {subsection}{\numberline {1.1}Definitions}{4}
+\contentsline {subsection}{\numberline {1.2}How do we Apply this?}{5}
+\contentsline {section}{\numberline {2}May 2, 2018}{6}
+\contentsline {subsection}{\numberline {2.1}Properties of $\mathbb {P}$}{6}
+\contentsline {subsection}{\numberline {2.2}Equiprobability}{6}
+\contentsline {subsection}{\numberline {2.3}Counting Tools}{6}
+\contentsline {subsubsection}{\numberline {2.3.1}The Cartesian Product}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {paragraph}{}{7}
+\contentsline {subsubsection}{\numberline {2.3.2}Permutations}{7}
+\contentsline {subsubsection}{\numberline {2.3.3}Combinations}{8}
+\contentsline {subsection}{\numberline {2.4}Properties of Combinations}{9}
+\contentsline {subsubsection}{\numberline {2.4.1}Pascal's Triangle}{9}
+\contentsline {section}{\numberline {3}May 3, 2018}{10}
+\contentsline {subsection}{\numberline {3.1}Binomial Theorem}{10}
+\contentsline {subsection}{\numberline {3.2}Conditional Probability}{10}
+\contentsline {subsection}{\numberline {3.3}Independent Events}{11}
+\contentsline {subsection}{\numberline {3.4}Baye's Rule}{11}
+\contentsline {section}{\numberline {4}May 7, 2018}{13}
+\contentsline {subsection}{\numberline {4.1}When to use Permutations vs Combinations}{13}
+\contentsline {subsection}{\numberline {4.2}Multinomial Coefficients}{13}
+\contentsline {subsection}{\numberline {4.3}Discrete Random Variables}{13}
+\contentsline {subsection}{\numberline {4.4}Probability Distribution Representations}{14}
+\contentsline {subsection}{\numberline {4.5}Expected Value}{14}
+\contentsline {subsection}{\numberline {4.6}Expected Value of a Function of a Random Variable}{14}
+\contentsline {subsection}{\numberline {4.7}Varience of a Random Variable}{15}
+\contentsline {subsection}{\numberline {4.8}Standard Deviation of a Random Variable}{15}
+\contentsline {subsection}{\numberline {4.9}Some Theorems (without proof)}{15}
+\contentsline {subsection}{\numberline {4.10}Binomial Probability Distribution}{15}
+\contentsline {section}{\numberline {5}May 8, 2018}{17}
+\contentsline {subsection}{\numberline {5.1}Bernoulli Distribution}{17}
+\contentsline {subsection}{\numberline {5.2}Some Properties of $E$, and $V$}{17}
+\contentsline {subsection}{\numberline {5.3}A Proof that $V(X) = E(X^{2}) - (E(X))^{2}$}{18}
+\contentsline {subsection}{\numberline {5.4}More on Binomial Distribution}{18}
+\contentsline {subsection}{\numberline {5.5}Geometric Distribution}{20}
+\contentsline {section}{\numberline {6}May 9, 2018}{23}
+\contentsline {subsection}{\numberline {6.1}Hypergeometric Distribution}{23}
+\contentsline {subsubsection}{\numberline {6.1.1}The Probability Function of X}{23}
+\contentsline {subsection}{\numberline {6.2}Poisson Distribution}{24}
+\contentsline {subsection}{\numberline {6.3}Moment Generating Functions}{27}
+\contentsline {subsection}{\numberline {6.4}The MGF of the Binomial Distribution}{29}
+\contentsline {section}{\numberline {7}May 10, 2018}{30}
+\contentsline {subsection}{\numberline {7.1}The MGF of the Geometric Distribution}{30}
+\contentsline {subsection}{\numberline {7.2}The MGF of the Poisson Distribution}{30}
+\contentsline {subsection}{\numberline {7.3}Chebyshev's Inequality}{31}
+\contentsline {subsection}{\numberline {7.4}The Cumulative Distribution Function}{32}
+\contentsline {subsection}{\numberline {7.5}Continuous Random Variables}{32}
+\contentsline {subsection}{\numberline {7.6}Computing Probability with the Cumulative Distribution Function}{32}
+\contentsline {subsection}{\numberline {7.7}Probability Density Function}{33}
+\contentsline {section}{\numberline {8}May 14, 2018}{35}
+\contentsline {subsection}{\numberline {8.1}More on CDFs and PDFs}{35}
+\contentsline {subsection}{\numberline {8.2}Expected Value of a Continuous Random Variable}{35}
+\contentsline {subsection}{\numberline {8.3}Variance of a Continuous Random Variable}{36}
+\contentsline {subsection}{\numberline {8.4}Properties of $E(X)$ and $V(X)$}{36}
+\contentsline {subsection}{\numberline {8.5}Uniform Distribution Over an Open Interval}{37}
+\contentsline {subsection}{\numberline {8.6}Normal Distribution}{39}
+\contentsline {section}{\numberline {9}May 15, 2018}{41}
+\contentsline {subsection}{\numberline {9.1}The Gamma Function}{41}
+\contentsline {subsection}{\numberline {9.2}Properties of the Gamma function}{41}
+\contentsline {subsection}{\numberline {9.3}Some More General Applications of $\Gamma $}{42}
+\contentsline {section}{\numberline {10}May 16, 2018}{44}
+\contentsline {subsection}{\numberline {10.1}The Gamma Family of Distributions}{44}
+\contentsline {subsubsection}{\numberline {10.1.1}The Gamma Distribution with One Parameter}{44}
+\contentsline {subsubsection}{\numberline {10.1.2}The Gamma Distribution with Two Parameters}{45}
+\contentsline {subsubsection}{\numberline {10.1.3}The Exponential Distribution}{45}
+\contentsline {subsubsection}{\numberline {10.1.4}The Chi-Square Distribution}{46}
+\contentsline {subsubsection}{\numberline {10.1.5}A One-Line "Proof" that $\Gamma {\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left (\vcenter to\@ne \big@size {}\right .$}\box \z@ }\frac {1}{2}{\setbox \z@ \hbox {\frozen@everymath \@emptytoks \mathsurround \z@ $\nulldelimiterspace \z@ \left )\vcenter to\@ne \big@size {}\right .$}\box \z@ } = \sqrt {\pi }$}{47}
+\contentsline {subsection}{\numberline {10.2}The Beta Function}{47}
+\contentsline {subsection}{\numberline {10.3}The Beta Distribution}{47}
+\contentsline {section}{\numberline {11}May 17, 2018}{49}
+\contentsline {section}{\numberline {12}May 21, 2018}{50}
+\contentsline {section}{\numberline {13}May 22, 2018}{51}
+\contentsline {section}{\numberline {14}May 23, 2018}{52}
+\contentsline {section}{\numberline {15}May 24, 2018}{53}
+\contentsline {section}{\numberline {16}May 28, 2018}{54}
+\contentsline {section}{\numberline {17}May 29, 2018}{55}
+\contentsline {section}{\numberline {18}May 30, 2018}{56}
+\contentsline {section}{\numberline {19}May 31, 2018}{57}

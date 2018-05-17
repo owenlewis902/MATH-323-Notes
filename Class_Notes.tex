@@ -27,6 +27,9 @@
 \newcommand{\imply}{\Rightarrow}
 \newcommand{\x}{\cdot}
 \newcommand{\Ga}{\Gamma}
+\newcommand{\al}{\alpha}
+\newcommand{\sg}{\sigma}
+\newcommand{\be}{\beta}
 
 \title{MATH 323 Class Notes}
 \author{Owen Lewis}
@@ -1085,6 +1088,162 @@ converges $\forall \alpha \in \R$, and thus $\Ga$ converges for only positive $\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 16, 2018}
+\subsection{The Gamma Family of Distributions}
+\subsubsection{The Gamma Distribution with One Parameter}
+Let $X$ be a continiuous random variable, and consider the function
+\[
+f_{X}(x) =
+\begin{cases}
+	\frac{x^{\alpha -1}e^{-x}}{\Ga(\al)}, &\text{if}\ x \gt 0\\
+	0, &\text{if}\ x \leq 0
+\end{cases}
+\]
+if $f_{X}$ is the PDF of $X$, then $X$ has the one-parameter gamma distribution. We write $X \sim$ Gamma($\al$).\\\\
+\textbf{Properties:} If $X \sim$ Gamma($\al$) then
+\begin{enumerate}
+	\item $E(X) = \al$
+	\item $V(X) = \al$
+\end{enumerate}
+\textbf{Proof of 1:} By definition,
+\begin{align*}
+	E(X) &= \int_{0}^{\infty} x\frac{x^{\al-1}e^{-x}}{\Ga(\al)}\ dx\\
+		&= \int_{0}^{\infty} \frac{x^{\al}e^{-x}}{\Ga(\al)}\ dx\\
+		&= \frac{\Ga(\al +1)}{\Ga(\al)}\\
+		&= \al
+\end{align*}
+\qed\\\\
+\textbf{Proof of 2:} First we need to calculate $E(X^{2})$. This is done in evaluating the same kind of integral as in the proof of part 1 (but with $x^2$ instead of $x$).
+\[E(X^2) = \int_{0}^{\infty} x^{2}\frac{x^{\al-1}e^{-1}}{\Ga(\al)}\ dx = \frac{\Ga(\al+2)}{\Ga(\al)} = \al(\al+1)\]
+Then of course, 
+\begin{align*}
+	V(X) &= E(X^2) - (E(X))^2\\
+		&= \al(\al+1)-\al^2\\
+		&= \al
+\end{align*}
+\qed
+\subsubsection{The Gamma Distribution with Two Parameters}
+Let $X$ be a continuous random variable, and let $\al\ \gt\ 0$, and $\be\ \gt\ 0$. Suppose that if $X \sim$ Gamma($\al, \be$), then the PDF of $X$ is given by
+\[
+f_X(x) = 
+\begin{cases}
+	\frac{1}{\be^2\Ga(\al)}x^{\al-1}e^{-\frac{x}{\be}}, \text{if}\ x\ \gt\ 0\\
+	0, \text{otherwise}
+\end{cases}
+\]\\
+\textbf{Remark:} If $X \sim$ Gamma($\al, \be$), then $X = \be Y$, where $Y \sim$ Gamma($\al$).\\\\
+\textbf{Proposition:} If $X \sim$ Gamma($\al, \be$) then
+\begin{enumerate}
+	\item $E(X) = \al\be$
+	\item $V(X) = \al\be^2$
+\end{enumerate}
+\textbf{Proof:} The proof of these properties immediately follows from the fact that $X=\be Y$ where $Y \sim$ Gamma($\al$).
+\subsubsection{The Exponential Distribution}
+Suppose $X \sim$ Gamma($\al =1,\ \be$). Then we say that $X$ has the exponential distribution and we write $X \sim$ Exp($\be$).\\\\
+\textbf{Proposition:} If $X \sim$ Exp($\be$) then
+\begin{enumerate}
+	\item $E(X) = \be$
+	\item $V(X) = \be^{2}$
+\end{enumerate}
+\textbf{Proof:} The exponential distribution is a special case of the two-parameter gamma distribution, with $\al =1$. The result thus follows from setting $\al :=1$ in the expected value and variance formulae.\\\\
+\textbf{The Memoryless Property}
+If $X \sim$ Exp($\be$) then
+\[\bbP(X\ \gt\ a+b\ |\ X\ \gt\ a) = \bbP(X\ \gt\ b)\]
+\textbf{Proof of the Memoryless Property:} Recall the \ti{survival function} $S(t)$ is defined as the compliment of the CDF. i.e.
+\[S(t) = \bbP(x\ \gt\ t) = 1-F_{X}(t) = e^{\frac{t}{\be}}\]
+for $t\ \gt\ 0$. Intuitively, it's the probability that something will survive past a point. Next,
+\begin{align*}
+	\bbP(X\ \gt\ a+b\ |\ X\ \gt\ a) &= \frac{\bbP(X\ \gt\ a+b\ \cap\ X\ \gt\ a)}{\bbP(X\ \gt\ a)}\\
+							&= \frac{\bbP(X\ \gt\ a+b)}{\bbP(X\ \gt\ a)}\\
+							&= \frac{S(a+b)}{S(a)}\\
+							&= \frac{e^{-\frac{a+b}{\be}}}{e^{-\frac{a}{\be}}}\\
+							&= e^{-\frac{b}{\be}}\\
+							&= S(b)\\
+							&= \bbP(X\ \gt\ b)
+\end{align*}
+\qed\\\\
+\textbf{Theorem:} Let $X$ be a continuous random variable. If $X$ is such that the memoryless property is satisfied, then $X$ must have the exponential distribution.\\
+\textbf{Proof:} The proof was left as an exercise "for math majors only" and I intend to work it out later. Who knows, maybe I'll even type it up here.
+\subsubsection{The Chi-Square Distribution}
+Suppose $X$ is a continuous random variable. $X$ is said to have the chi-square distribution with $p$ degrees of freedom ($p \in \N)$, iff $X \sim$ Gamma($\al = \frac{p}{2}$, $\be = 2$). We write $X \sim$ $\chi^{2}(p)$.\\\\
+To find the CDF and the PDF we let $Z$ be a standard normal, and set $X := Z^2$. Then
+\begin{align*}
+	F_{X}(x) &= \bbP(X \leq x)\\
+			&= \bbP(Z^{2} \leq x)\\
+			&=
+				\begin{cases}
+					0, &\text{if}\ x\ \lt\ 0\\
+					\bbP(-\sqrt{x} \leq Z \leq \sqrt{x}), &\text{otherwise}
+				\end{cases}\\
+			&=
+				\begin{cases}
+					0, &\text{if}\ x\ \lt\ 0\\
+					\Phi(\sqrt{x}) - \Phi(-\sqrt{x}), &\text{otherwise}
+				\end{cases}\\
+	F_{X}(x)	&=
+				\begin{cases}
+					0, &\text{if}\ x\ \lt\ 0\\
+					2\Phi(\sqrt{x}) -1, &\text{otherwise}
+				\end{cases}
+\end{align*}
+is the CDF, and to find the PDF we just differentiate that.
+\[	
+	F'_{X}(x) = f_{X}(x) =
+\begin{cases}
+	0, &\text{if}\ x\ lt\ 0\\
+	\frac{x^{-\frac{1}{2}}e^{\frac{-x}{2}}}{\sqrt{2 \pi}}, &\text{otherwise}
+\end{cases}
+\]\\
+\textbf{Preposition:} If $X \sim \chi^{2}(p)$ then
+\begin{enumerate}
+	\item $E(X) = 2\x \frac{p}{2} = p$
+	\item $V(X) = 2^2\x \frac{p}{2} = 2p$
+\end{enumerate}
+\subsubsection{A One-Line "Proof" that $\Ga\big(\frac{1}{2}\big) = \sqrt{\pi}$}
+$\sqrt{2\pi} = 2^{\frac{1}{2}}\Ga\big(\frac{1}{2}\big) \imply \Ga\big(\frac{1}{2}\big) = \sqrt{\pi}$
+\qed
+\subsection{The Beta Function}
+First we define the \ti{beta function} as
+\[ B(\al, \be) = \int_{0}^{1} x^{\al -1}(1-x)^{\be -1}\ dx\]
+for $\al\ \gt\ 0$, $\be\ \gt\ 0$.\\\\
+\textbf{Proposition:}
+\[B(\al, \be) = \frac{\Ga(\al)\Ga(\be)}{\Ga(\al + \be)}\]\\
+\subsection{The Beta Distribution}
+Suppose $X$ is a continuous random variable. If the function
+\[
+f_{X}(x) =
+\begin{cases}
+	\frac{x^{\al-1}(1-x)^{\be-1}}{B(\al, \be)}, &\text{if}\ 0\ \lt\ x\ \lt\ 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+is the PDF of $X$, then $X$ has the beta distribution with parameters $\al$, $\be$. We write $X \sim$ Beta($\al, \be$).\\\\
+\textbf{Proposition:} If $X \sim$ Beta($\al, \be$) the
+\begin{enumerate}
+	\item $E(X) = \frac{\al}{\al + \be}$
+	\item $V(X) = \frac{\al\be}{(\al + \be)^{2}(\al + \be +1)}$
+\end{enumerate}
+\ \\
+\textbf{Ex 1:} Let $X \sim$ Beta($\al=1,\ \be =1$). Then,
+\[B(\al=1,\ \be =1) = \frac{\Ga(1)\Ga(1)}{\Ga(1)} = 1\]
+and thus the PDF is given by
+\[
+f_{X}(x) =
+\begin{cases}
+	1, &\text{if}\ 0\ \lt\ x\ \lt\ 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+\textbf{Remark:} $X \sim$ Uniform(0, 1) $\equiv$ $X \sim$ Beta($\al=1,\ \be =1$)\\\\
+\textbf{Ex 2:} Let $Y \sim$ Beta($\al=2,\ \be =1$). Then,
+\[B(\al=2,\ \be =1) = \frac{\Ga(2)\Ga(1)}{\Ga(3)} = \frac{1}{2}\]
+so the PDF is given by
+\[
+f_{X}(x) =
+\begin{cases}
+	2y, &\text{if}\ 0\ \lt\ x\ \lt\ 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1133,5 +1292,6 @@ converges $\forall \alpha \in \R$, and thus $\Ga$ converges for only positive $\
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\includegraphics[scale=0.6]{couchy.jpg}
 
 \end{document}
