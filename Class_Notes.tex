@@ -4,12 +4,14 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{graphicx}
+\usepackage{diagbox}
 
 \graphicspath{{pics/}}
 
 %CURLIES  :)       $\{$ $\}$
 
 \newcommand{\ti}[1]{\textit{#1}}
+\newcommand{\tb}[1]{\textbf{#1}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -30,6 +32,15 @@
 \newcommand{\al}{\alpha}
 \newcommand{\sg}{\sigma}
 \newcommand{\be}{\beta}
+\newcommand{\prop}{\textbf{Proposition: }}
+\newcommand{\thm}{\textbf{Theorem: }}
+\newcommand{\lem}{\textbf{Lemma: }}
+\newcommand{\cor}{\textbf{Corollary: }}
+\newcommand{\proo}{\textbf{Proof: }}
+\newcommand{\exx}{\textbf{Ex: }}
+\newcommand{\exxi}{\textbf{Ex 1: }}
+\newcommand{\exxii}{\textbf{Ex 2:  }}
+\newcommand{\soln}{\textbf{Solution: }}
 
 \title{MATH 323 Class Notes}
 \author{Owen Lewis}
@@ -1249,6 +1260,164 @@ f_{X}(x) =
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 17, 2018}
+\subsection{Moment Generating Functions}
+If $X$ is a random variable, and if $f_{X}$ is its PDF, then the \ti{moment generating function} of $X$, $m_{X}$, is defined by
+\[m_{X}(t) = E(e^{tX}) = \int_{-\infty}^{\infty} e^{tx}f_{X}(x)\ dx\]\\
+\tb{Theorem:} Let $\ep\ \gt\ 0$. If the domain of $m_{X}(t)$ contains an interval of the form ]$-\ep, \ep$[, then
+\[\frac{d^{n}}{dt^{n}}(m_{X}(t))\Big\rvert_{t=0} = E(X^{n})\]\\
+\tb{Property:} If $Y$ = $aX+b$, for $a\ \gt\ 0$, then $m_{Y}(t) = e^{tb}m_{X}(at)$\\
+\tb{Proof:} $m_{Y}(t) = E(e^{ty}) = E(e^{t(aX+b)}) = e^{tb}E(e^{atX}) = e^{tb}m_{X}(at)$
+\qed
+\subsection{The MGF of the Uniform Distribution}
+\tb{Proposition:} Suppose $X \sim$ Uniform($a, b$). Then, the moment generating function of $X$ is given by
+\[m_{X}(t) =
+\begin{cases}
+	\frac{e^{bt}-e^{at}}{(b-a)t}, &\text{if}\ t \neq 0\\
+	0, &\text{otherwise} 
+\end{cases}
+\]
+\tb{Proof:} Since $X \sim$ Uniform($a, b$), $X=(b-a)U + a$, where $U \sim$ Uniform($0, 1$). Therefore,
+\[m_{X}(t)=e^{at}m_{U}((b-a)t)\]
+Now we need to find the MGF of $U$.
+\begin{align*}
+	m_{U}(s) &= E(e^{sU})\\
+			&= \int_{0}^{1} e^{su}\ du\\
+			&= \frac{1}{s}e^{su}\Big\rvert_{0}^{1}, s \neq 0\\
+	m_{U}(s)	&=
+				\begin{cases}
+					\frac{e^{s}-1}{s}, &\text{if}\ s \neq 0\\
+					1, &\text{if}\ s = 0
+				\end{cases}\\
+	m_{U}((b-a)t) &= 
+				\begin{cases}
+					\frac{e^{bt}-e^{at}}{(b-a)t}, &\text{if}\ s \neq 0\\
+					1, &\text{if}\ s = 0
+				\end{cases}
+\end{align*}
+\qed
+\subsection{The MGF of the Normal Distribution}
+\prop Suppose $X \sim$ N($\mu, \sg^{2}$). Then the MGF of $X$ is given by
+\[m_{X}(t) = e^{\frac{1}{2}\sg^{2}t^{2}+\mu t}\]
+\proo If $X \sim$ N($\mu, \sg^{2}$) then $X = \sg Z+ \mu$ , where $Z \sim$ N(0, 1). Therefore $m_{X}(t) = e^{\mu t}m_{Z}(\sg t)$. To find $m_{Z}$ we do
+\begin{align*}
+	m_{Z}(s) &= E(e^{sZ})\\
+			&= \int_{-\infty}^{\infty} e^{sz}\frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}z^{2}}\ dz \\
+			&= \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-\frac{1}{2}(z^{2}-2zs)}\ dz \\
+			&\vdots
+			\intertext{(We tackle the integral a bit then do a U-substituiton and end up here)}	
+			&= e^{\frac{1}{2}s^{2}}\bigg(\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} e^{-\frac{1}{2}u^{2}}\ du\bigg)\\
+	m_{Z}(s)	&=  e^{\frac{1}{2}s^{2}}, s \in \R\\
+	m_{Z}(t)	&=  e^{\frac{1}{2}\sg^{2}t^{2}}e^{\mu t}\\
+			&=  e^{\frac{1}{2}\sg^{2}t^{2}+\mu t}
+\end{align*}
+\qed
+\subsection{The MGF of the Gamma Distribution}
+\prop If $X \sim$ Gamma($\al, \be$) then the MGF of $X$ is given by
+\[m_{x}(t) = \frac{1}{(1-\be t)^{\al}}\]
+\proo If $X \sim$ Gamma($\al, \be$) then $X = \be Y$ where $Y \sim$ Gamma($\al$). Therefore, $m_{X}(t) = m{Y}(\be t)$. We need to find $m_{Y}$.
+\begin{align*}
+	m_{Y}(s) &= E(e^{sY})\\
+			&= \int_{0}^{\infty} e^{sy} \frac{y^{\al-1}e^{-y}}{\Ga(\al)}\ dy\\
+			&= \frac{1}{\Ga(\al)} \int_{0}^{\infty} e^{-y(1-s)} y^{\al-1}\ dy\\
+			&= \frac{1}{\Ga(\al)}\x\frac{\Ga(\al)}{(1-s)^{\al}}\\
+	m_{Y}(s)	&= \frac{1}{(1-s)^{\al}}, s\ \lt\ 1\\
+	m_{Y}(t)	&= \frac{1}{(1-\be t)^{\al}}
+\end{align*}
+\qed
+\subsection{The Jointly Discrete Bivariate Distribution}
+If $X$, and $Y$ are two discrete random variables, the \ti{joint probability function of $X$ and $Y$}, $p(x, y)$ is defined as
+\[p(x, y) = \bbP(X=x\ \cap\ Y=y)\]\\
+\exx Suppose a die has 6 faces numbered 1, 2, 3, 3, 4, 4. Roll the die twice. Let $X$ represent the number obtained the first time, and let $Y$ represent the number obtained the second time. Then the probability distribuion for $X$ is
+\begin{center}
+\begin{tabular}{c || c | c | c | c}
+$x$ & 1 & 2 & 3 & 4\\
+\hline
+$p_{X}(x)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{3}$ & $\frac{1}{3}$
+\end{tabular}
+\end{center}
+and the probability distribution for $Y$ is
+\begin{center}
+\begin{tabular}{c || c | c | c | c}
+$y$ & 1 & 2 & 3 & 4\\
+\hline
+$p_{Y}(y)$ & $\frac{1}{6}$ & $\frac{1}{6}$ & $\frac{1}{3}$ & $\frac{1}{3}$
+\end{tabular}
+\end{center}
+And thus the joint probability distribution for $X$ and $Y$ is
+\begin{center}
+\begin{tabular}{c || c | c | c | c }
+\diagbox[width=.78cm, height=.78cm]{$y$}{$x$} & 1 & 2 & 3 & 4\\
+\hline
+1 & $\frac{1}{36}$ & $\frac{1}{36}$ & $\frac{1}{18}$ & $\frac{1}{18}$\\
+\hline
+2 & $\frac{1}{36}$ & $\frac{1}{36}$ & $\frac{1}{18}$ & $\frac{1}{18}$\\
+\hline
+3 & $\frac{1}{18}$ & $\frac{1}{18}$ & $\frac{1}{9}$ & $\frac{1}{9}$\\
+\hline
+4 & $\frac{1}{18}$ & $\frac{1}{18}$ & $\frac{1}{9}$ & $\frac{1}{9}$\\
+\end{tabular}
+\end{center}
+Note that in this example, rolling a die twice is two independent events and so
+\begin{align*}
+	p(x_{1}, y_{1}) &= \bbP(X=x_{1}\ \cap\ Y=y_{1})\\
+				&= \bbP(X=x_{1})\bbP(Y=y_{1})\\
+\end{align*}
+\subsection{Jointly Continuous Random Variables}
+\subsubsection{The Joint Cumulative Distribution Function}
+Suppose $X$, and $Y$ are continuous random variables. We define the \ti{joint cumulative distribution function} (JCDF) of $X$, and $Y$, $F$, as
+\[F(X, Y) = \bbP(X\leq x\ \cap\ Y\leq y)\]\\
+\tb{Properties of $F$:}
+\begin{enumerate}
+	\item $\lim_{x\to -\infty}$ $F(X, Y)$ = 0 = $\lim_{y\to -\infty}$ $F(X, Y)$
+	\item $\lim_{x\to \infty}$ $F(X, Y)$ = $\bbP(Y\leq y)$= $F_{Y}(y)$ $F(X, Y)$
+	\item $\lim_{y\to \infty}$ $F(X, Y)$ = $\bbP(X\leq x)$= $F_{X}(x)$ $F(X, Y)$
+	\item $\lim_{(x, y)\to \infty}$ $F(X, Y)$ = 1
+	\item Inclusion/Exclusion Property: If $x_{2} \geq x_{1}$, and $y_{2} \geq y_{1}$, then $F(x_1, x_2) + F(x_2, y_2) \geq 0$, and $F(x_2, y_2) + F(x_1, y_1) \geq F(x_2, y_1) + F(x_1, y_2)$.
+	\item 0 $\leq F(X, Y) \leq$ 1
+\end{enumerate}
+\subsubsection{The Joint Probability Density Function}
+Suppose $X$, and $Y$ are two continuous random variables. Then the \ti{joint probability density function} (JPDF) of $X$, and $Y$, $f$, is defined as
+\[f(x, y) = \frac{\partial^2}{\partial x\partial y}F(X, Y)\]\\
+\tb{Properties of $f$:} If $f$ is the JPDF of two continuous random variables, $X$, and $Y$, then
+\begin{enumerate}
+	\item $f(x, y) \geq 0$
+	\item $\iint_{A} f(x, y)\ dA$ = 1, $A=\R^{2}$
+\end{enumerate}
+\ \\
+\exxi Let $X$, and $Y$ be two continuous random variables and and consider the function $f$. 
+\[
+f(x, y) =
+\begin{cases}
+	cx^{2}y, &\text{if}\ 0\leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Find a constant $c \in \R$ such that $f$ is the JPDF of $X$, and $Y$.\\
+\soln
+\begin{align*}
+	1 &= \iint_{A} cx^2y\ dA, A = \R^{2}\\
+	&= c\int_{0}^{1}\int_{0}^{y}x^2y\ dx\ dy\\
+	&= c\int_{0}^{1} \frac{y^{4}}{3}\ dy\\
+	\frac{3}{c}&= \frac{1}{5}\\
+	c &= 15
+\end{align*}
+\exxii Let $X$, and $Y$ be two continuous random variables and and consider the function $f$.
+\[
+f(x, y) =
+\begin{cases}
+	ce^{-2y}, &\text{if}\ y\geq x^{2},\ \text{and}\ x\ \gt\ 0\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Find a constant $c \in \R$ such that $f$ is the JPDF of $X$, and $Y$.\\
+\soln
+\begin{align*}
+	1 &= c\int_{0}^{\infty}\int_{0}^{\sqrt{y}}e^{-2y}\ dx\ dy\\
+	&= c\int_{0}^{\infty} \sqrt{y}e^{-2y}\ dy\\
+	&= c\frac{\Ga\big(\frac{3}{2}\big)}{2^{\frac{3}{2}}}\\
+	c &= \frac{2\sqrt{2}}{\frac{1}{2}\sqrt{\pi}}\\
+	c &= 4\sqrt{\frac{2}{\pi}}
+\end{align*}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1289,6 +1458,11 @@ f_{X}(x) =
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 31, 2018}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Exercises}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
