@@ -942,7 +942,7 @@ Let $a, b \in \R$ such that $b\ \gt\ a$. A continuous random variable $X$ is sai
 F_X(x) =
 \begin{cases}
 	0 &\text{if}\ x \leq a\\
-	\frac{x-a}{x-b} &\text{if}\ a \leq x \leq b\\
+	\frac{x-a}{b-a} &\text{if}\ a \leq x \leq b\\
 	1 &\text{if}\ x \geq b
 \end{cases}
 \]
@@ -1273,7 +1273,7 @@ If $X$ is a random variable, and if $f_{X}$ is its PDF, then the \ti{moment gene
 \[m_{X}(t) =
 \begin{cases}
 	\frac{e^{bt}-e^{at}}{(b-a)t}, &\text{if}\ t \neq 0\\
-	0, &\text{otherwise} 
+	1, &\text{otherwise} 
 \end{cases}
 \]
 \tb{Proof:} Since $X \sim$ Uniform($a, b$), $X=(b-a)U + a$, where $U \sim$ Uniform($0, 1$). Therefore,
