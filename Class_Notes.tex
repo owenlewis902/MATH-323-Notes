@@ -1410,7 +1410,6 @@ f(x, y) =
 \end{cases}
 \]
 Find a constant $c \in \R$ such that $f$ is the JPDF of $X$, and $Y$.\\
-\soln
 \begin{align*}
 	1 &= c\int_{0}^{\infty}\int_{0}^{\sqrt{y}}e^{-2y}\ dx\ dy\\
 	&= c\int_{0}^{\infty} \sqrt{y}e^{-2y}\ dy\\
@@ -1422,12 +1421,225 @@ Find a constant $c \in \R$ such that $f$ is the JPDF of $X$, and $Y$.\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{May 21, 2018}
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \section{May 22, 2018}
+\subsection{An Example That We Didn't Get To on Friday}
+\exx Consider the following JPDF of two continuous random variables $X$, and $Y$.
+\[
+f(x, y) =
+\begin{cases}
+	6x, &\text{if}\ 0 \leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Find $\bbP\big(\frac{1}{4} \leq X \leq 1 \wedge Y \leq \frac{1}{2}\big)$\\\\
+\soln $\bbP\big(\frac{1}{4} \leq X \leq 1 \wedge Y \leq \frac{1}{2}\big)$ is simply given by
+\[\bbP\bigg(\frac{1}{4} \leq X \leq 1 \wedge Y \leq \frac{1}{2}\bigg) = \iint_{A}f(x, y)\ dA\]
+By sketching out the support its can easily be seen that $A = \big[\frac{1}{4}, 1\big]\times\big[x, \frac{1}{2}\big]$, and thus
+\[\bbP\bigg(\frac{1}{4} \leq X \leq 1 \wedge Y \leq \frac{1}{2}\bigg) = \int_{\frac{1}{4}}^{\frac{1}{2}} \int_{x}^{\frac{1}{2}}6x\ dy\ dx = \dots = \frac{1}{16}\]
+\subsection{Marginal Distributions}
+Suppose we have two random variables $X$, and $Y$ where we're given the JPF (if discrete) or the JPDF (if continuous) and we want to find the distribution of one of those variables. That's where the idea of the marginal distribution comes in. We define it as such
+\begin{enumerate}
+	\item If $X$, and $Y$ are discrete and $p(x, y)$ is their JPF  then
+		\begin{itemize}
+			\item The PF of $X$ is $\displaystyle p_{X}(x) = \sum_{y}p(x, y)$
+			\item The PF of $Y$ is $\displaystyle p_{Y}(y) = \sum_{x}p(x, y)$
+		\end{itemize}
+	\item If $X$, and $Y$ are continuous and $f(x, y)$ is their JPDF  then
+		\begin{itemize}
+			\item The PDF of $X$ is $\displaystyle f_{X}(x) = \int_{-\infty}^{\infty} f(x, y)\ dy$
+			\item The PDF of $Y$ is $\displaystyle f_{Y}(y) = \int_{-\infty}^{\infty} f(x, y)\ dx$
+		\end{itemize}
+\end{enumerate}
+\exxi Given the following table find $p_{X}(x)$, $p_{Y}(y)$, and the distributions of $X^{2}$, and $Y$.
+\begin{center}
+\begin{tabular}{c || c | c | c  }
+\diagbox[width=.78cm, height=.78cm]{$y$}{$x$} & -1 & 0 & 1\\
+\hline
+\hline
+0 & 1/4 & 1/6 & 1/12\\
+\hline
+1 & 1/4 & 0 & 1/4\\
+\end{tabular}
+\end{center}
+\soln $p_{X}(x)$ is given by
+\begin{align*}
+p_{X}(x) = \sum_{y}p(x, y) &\imply p_{X}(-1) = \frac{1}{4} + \frac{1}{4} = \frac{1}{2}\\
+					&\imply p_{X}(0) = \frac{1}{6} + 0 = \frac{1}{6}\\
+					&\imply p_{X}(1) = \frac{1}{12} + \frac{1}{4} = \frac{1}{3}
+\end{align*}
+Note that $X^{2} \sim$ Ber$\big(\frac{5}{6}\big)$\\\\
+Similarily, $p_{Y}(y)$ is given by
+\begin{align*}
+p_{X}(x) = \sum_{y}p(x, y) &\imply p_{Y}(0) = \frac{1}{4} + \frac{1}{6} + \frac{1}{12} = \frac{1}{2}\\
+					&\imply p_{Y}(1) = \frac{1}{4} + 0 + \frac{1}{4} = \frac{1}{2}
+\end{align*}
+Note that $Y \sim$ Ber$\big(\frac{1}{2}\big)$\\\\
+\exxii Consider the following JPDF
+\[
+f(x, y) =
+\begin{cases}
+	6x, &\text{if}\ 0 \leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Then
+\begin{align*}
+f_{X}(x) &=
+\begin{cases}
+	\int_{x}^{1}6x\ dy, &\text{if}\ 0 \leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}\\
+	&=
+\begin{cases}
+	3y^{2}, &\text{if}\ 0 \leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\end{align*}
+And thus $X \sim$ Beta($\al = 3,\ \be = 1$)
+\subsection{The Conditional Probability Function}
+Let $p(x, y)$ be the JPF of $(X, Y)$. Ley $X$ be such that $p_{X}(x) \neq  0$, then the \ti{conditional probability probability function} of $Y$ given $\{X=x\}$ is $p_{Y}(y|x)$ where
+\[p_{Y}(y|x) = \frac{p(x, y)}{p_{X}(x)}\]
+Similarily if $p_{Y}(y) \neq 0$ then the conditional probability of $X$ given $\{Y=y\}$ is $p_{X}(x|y)$ where
+\[p_{X}(x|y) = \frac{p(y, x)}{p_{Y}(y)}\]
+\exx Refer to the table a couple examples ago. Find the PF of $Y$ given $\{X=1\}$ and the PF of $X$ given $\{Y=1\}$.\\\\
+\soln Fixing $X=1$ then we get the probability fistribution given by the table
+\begin{center}
+\begin{tabular}{c || c | c}
+$y$ & 0 & 1 \\
+\hline
+$p_{Y}(y|x=1)$ & 1/4 & 3/4 \\
+\end{tabular}
+\end{center}
+Note that $Y \sim$ Ber\big($p=\frac{3}{4}$\big).
+Similarily by fixing $Y=1$ then we get the probability fistribution given by the table
+\begin{center}
+\begin{tabular}{c || c | c | c}
+$x$ & -1 & 0 & 1 \\
+\hline
+$p_{X}(x|y=1)$ & 1/2 & 0 & 1/2 \\
+\end{tabular}
+\end{center}
+\subsection{Conditional Density}
+Let $f(x, y)$ be the JPDF of $(X, Y)$. By definition
+\begin{enumerate}
+	\item The conditional density function of $X$ given $\{Y=y\}$ is given by \begin{center}$\displaystyle f_{X}(x|y) = \frac{f(x, y)}{f_{Y}(y)}$\end{center}
+	\item The conditional density function of $Y$ given $\{X=x\}$ is given by \begin{center}$\displaystyle f_{Y}(y|x) = \frac{f(x, y)}{f_{X}(x)}$\end{center}
+\end{enumerate}
+\exx Consider the JPDF given by
+\[
+f(x, y) =
+\begin{cases}
+	6x, &\text{if}\ 0 \leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Let $y \in ]0, 1[$ be fixed. Then
+\[
+f_{X}(x|y) =
+\begin{cases}
+	\frac{6x}{3y^{2}}, &\text{if}\ 0 \leq x \leq y\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+And therefore, given $Y$ fixed, $X \sim$ $Y$Beta($2, 1$).\\
+Now suppose we let $x \in ]0, 1[$ be fixed. Then
+\begin{align*}
+f_{Y}(y|x) &=
+\begin{cases}
+	\frac{6x}{6x(1-x)}, &\text{if}\ x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}\\
+	&= 
+\begin{cases}
+	\frac{1}{1-x}, &\text{if}\ x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\end{align*}
+And thus $Y \sim$ Uniform($x, 1$)
+\subsection{Independence}
+Suppose $X$, and $Y$ are two random variables.
+\begin{enumerate}
+	\item If $X$, and $Y$ are discrete then they are said to be independent if \begin{center}$p(x, y) = p_{X}(x)p_{Y}(y)$\end{center} where $p(x, y)$ is the JPF of $X$, and $Y$, and $p_{X}(x)$, and $p_{Y}(y)$ are the PFs of $X$ and $Y$ respectively.
+	\item If $X$, and $Y$ are continuous then they are said to be independent if \begin{center}$f(x, y) = f_{X}(x)f_{Y}(y)$\end{center}where $f(x, y)$ is the JPDF of $X$, and $Y$, and $f_{X}(x)$, and $f_{Y}(y)$ are the PDFs of $X$ and $Y$ respectively.
+\end{enumerate}
+\exxi Given the table deduce whether $X$ and $Y$ are independent or not
+\begin{center}
+\begin{tabular}{c || c | c | c  || c}
+\diagbox[width=.78cm, height=.78cm]{$y$}{$x$} & -1 & 0 & 1 & $p_{Y}(y)$\\
+\hline
+\hline
+0 & 1/4 & 1/6 & 1/12 & 1/2\\
+\hline
+1 & 1/4 & 0 & 1/4 & 1/2\\
+\hline
+\hline
+$p_{X}(x)$ & 1/2 & 1/6 & 1/3
+\end{tabular}
+\end{center}
+$p(X=0, Y=1) = 0 \neq p_{X}(0)p_{Y}(1)$ and so $X$ and $Y$ aren't independent.\\\\
+\exxii Consider the JPDF of $X$, and $Y$ given by
+\[
+f(x, y) =
+\begin{cases}
+	6x, &\text{if}\ 0 \leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+$X$ and $Y$ are not independent because the sketch of the support forms a triangle.\\\\
+\tb{Ex 3:} Consider the JPDF given by
+\[
+f(x, y) =
+\begin{cases}
+	x+y, &\text{if}\ x \in\ ]0, 1[, \text{and}\ y \in\ ]0, 1[\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+then
+\[
+f_{X}(x) =
+\begin{cases}
+	x+\frac{1}{2}, &\text{if}\ x \in\ ]0, 1[\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+and
+\[
+f_{Y}(y) =
+\begin{cases}
+	y+\frac{1}{2}, &\text{if}\ y \in\ ]0, 1[\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+but
+\[f(x, y) \neq f_{X}(x)f_{Y}(y),\ \forall x, y\]
+as
+\[f\Big(\frac{1}{4}, \frac{1}{4}\Big) = \frac{1}{2}\neq \frac{9}{16} = f_{X}\Big(\frac{1}{4}\Big)f_{Y}\Big(\frac{1}{4}\Big)\]
+thus $X$, and $Y$ aren't independent.\\\\
+\prop Let ($X, Y$) be 2 continuous random variables. Then $X$, and $Y$ are independent if and only if the following conditions hold
+\begin{enumerate}
+	\item The support of the JPDF of ($X, Y$) is a rectangle
+	\item The JPDF $f$ of ($X, Y$) can be written as $f(x, y) = h(x)g(y)$
+\end{enumerate}
+\exx Consider the following JPDF
+\[
+f(x, y) =
+\begin{cases}
+	x^{2}e^{-x-2y}, &\text{if}\ 0\ \lt\ x, \text{and}\ 0\ \lt\ y\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Then the support obviously forms a rectangle, and
+\[f(x, y) = (x^{2}e^{-x})(e^{-2y})\]
+and thus $X$ and $Y$ are independent.
+\subsection{Expected Value}
+Let $X, Y$ be two random variables. Then
+\begin{enumerate}
+	\item Suppose $X$, and $Y$ are discrete and $p(x, y)$ is their JPF. Let $F : \R^{2} \to \R$ be  a function such that \begin{center}$\displaystyle E(F(X, Y))= \sum_{x}\sum_{y}F(X, Y)p(x, y)$\end{center}
+	\item Suppose $X$, and $Y$ are continuous and $f(x, y)$ is theit JPDF.  Let the function $F : \R^{2} \to \R$ be such that \begin{center}$\displaystyle E(F(X, Y))= \iint_{\R^{2}}F(X, Y)f(x, y)\ dx\ dy$\end{center}
+\end{enumerate}
+\exx Suppose $X, Y$ are continuous. Find $E(X)$.\\\\
+\soln Since we're looking for $E(X)$ then we want to find the expected value where $F(X, Y) = x$. Therefore
+\[E(X) = \iint_{\R^{2}}x f(x, y)\ dy\ dx = \int_{-\infty}^{\infty} x \int_{-\infty}^{\infty} f(x, y)\ dy\ dx\ = \int_{-\infty}^{\infty} xf_{X}(x)\ dx\]
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
