@@ -5,6 +5,8 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{diagbox}
+\usepackage{romannum}
+\usepackage[makeroom]{cancel}
 
 \graphicspath{{pics/}}
 
@@ -12,6 +14,8 @@
 
 \newcommand{\ti}[1]{\textit{#1}}
 \newcommand{\tb}[1]{\textbf{#1}}
+\newcommand{\rn}[1]{\romannum{#1}}
+\newcommand{\Rn}[1]{\Romannum{#1}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
@@ -48,6 +52,8 @@
 \date{Summer 2018}
 
 \begin{document}
+\pagenumbering{arabic}
+
 \begin{titlepage}
 \maketitle
 \end{titlepage}
@@ -1763,7 +1769,7 @@ We define the \ti{correlation coefficient} between $X$, and $Y$ as
 \[
 f(x, y) =
 \begin{cases}
-	6x, &\text{if}\ 0 \leq y \leq 1\\
+	6x, &\text{if}\ 0 \leq x \leq y \leq 1\\
 	0, &\text{otherwise}
 \end{cases}
 \]
@@ -1775,8 +1781,90 @@ Then $X \sim$ Beta(2, 2), and $Y \sim$ Beta(3, 1) and therefore $V(X) = \frac{4}
 
 \section{May 24, 2018}
 \subsection{Multinomial Distribution}
-Suppose an experiment yields $k \geq 2$ outcomes $E_{1}, E_{2}, \dots, E_{k}$, where $p_{1} = \bbP(E_{i})$, with $i = 1, 2 \dots, k$. Suppose we run the experiment $n$ times and let $X_{i}$ be the random variable containing the number of times that $E_{i}$ occured.
+Suppose an experiment yields $k \geq 2$ outcomes $E_{1}, E_{2}, \dots, E_{k}$, where $p_{1} = \bbP(E_{i})$, with $i = 1, 2 \dots, k$. Suppose we run the experiment $n$ times and let $X_{i}$ be the random variable containing the number of times that $E_{i}$ occured. Note that the distribution of each of the $X_{i}$s is binomial. The probability function $\bbP$ for the multinomial distributions is given by
+\[ \bbP(X_{1} = x_{1}, X_{2} = x_{2}, \dots, X_{k} = x_{k} ) = {n\choose{X_{1}, X_{2}, \dots, X_{k}}}p_{1}^{X_{1}}p_{2}^{X_{2}}\dots p_{k}^{X_{k}}\]\\
+\exx A restaurant offers 3 menus, \Rn{1}, \Rn{2}, and \Rn{3}. Any customer chooses either \Rn{1}, \Rn{2}, or \Rn{3} with probability $p_{1}$, $p_{2}$, or $p_{3}$ respectively. Supporse 10 customers arrive at the restaurant and select menus independently. Then
+\[\bbP(X_{\text{\Rn{1}}} = 1 , X_{\text{\Rn{2}}} = 3, X_{\text{\Rn{3}}} = 6) = \frac{10!}{1!3!6!}p_{1}^{1}p_{2}^{3}\dots p_{k}^{6}\]
+\prop In the multinomial setting
+\begin{enumerate}
+	\item $X_{i} \sim$ Bin($n,\ p_{i}$)
+	\item If $i, j \in \R$ with $i \neq j$ then cov($X_{i},\ X_{j}$) = $-np_{i}p_{j}$
+\end{enumerate}
+\ \\
+\tb{Proof of 2:} Let $i, j \in \R$ be fixed and WLOG suppose $i = 1$, $j = 2$. Then define a random variable $U_{\ell}$ as
+\[
+U_{\ell} := 
+\begin{cases}
+	1, &\text{if the $\ell^{th}$ element gives $E_{1}$}\\
+	0,  &\text{otherwise}
+\end{cases}
+\]
+Then $U_{\ell} \sim$ Ber($p_{1}$), and cov($U_{\ell},\ U_{\ell'}$) = 0 if $\ell \neq \ell'$. Now define a random variable $X_{1}$ as $\displaystyle X_{1} := \sum_{\ell=1}^{n} U_{\ell}$\\
+Similarily, define a random variable, $V_{k}$, as
+\[
+V_{k} := 
+\begin{cases}
+	1, &\text{if the $k^{th}$ element gives $E_{2}$}\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Then $V_{k} \sim$ Ber($p_{2}$), and cov($V_{k},\ V_{k'}$) = 0 if $k \neq k'$. Now define the random variable $X_{2}$ as $\displaystyle X_{2} := \sum_{k=1}^{n} V_{k}$\\
+Note that by just looking at all cases, $U_{x}V_{y} = 0$ for any $x, y \in \R$, and so cov($U_{\ell}, V_{k}$) = $E(U_{\ell}V_{k}) - E(U_{\ell})E(V_{k}) = - E(U_{\ell})E(V_{k}) = -p_{1}p_{2}$. Therefore
+\[
+\text{cov}(U_{\ell}V_{k}) =
+\begin{cases}
+	0 &\text{if}\ k \neq \ell\\
+	-p_{1}p_{2} &\text{otherwise}
+\end{cases}
+\]
+FInally
+\begin{align*}
+	\text{cov}(X_{1}, X_{2}) &= \text{cov}\bigg(\sum_{\ell=1}^{n} U_{\ell},\ \sum_{k=1}^{n} V_{k}\bigg)\\
+						&= \sum_{\ell =1}^{n} \sum_{k=1}^{n} \text{cov}(U_{\ell},\ V_{k})\\
+						&= \cancelto{0}{\sum_{\ell \neq k}^{n} \text{cov}(U_{\ell},\ V_{k})} + \sum_{\ell=1}^{n}\text{cov}(U_{\ell},\ V_{k})\\
+						&= -np_{1}p_{2}
+\end{align*}
+\qed
 \subsection{Conditional Expectation}
+Suppose $X$ and $Y$ are discrete random variables. Let $p_{X}(x|y)$ be the conditional probability function of $X$ given $\{Y=y\}$. Set $\displaystyle G(Y) := E(X|Y=y)$. The random variable $G(Y)$ is called the \ti{conditional expectation} of $X$ given $Y$  and is denoted $E(X|Y)$. $E(Y|X)$ is defined in parallelly. Note that
+\[G(Y) = E(X|Y) = \sum_{x}xp_{X}(x, y)\]\\
+Suppose $X$ and $Y$ are continuous random variables. Let $f(x|y)$ be the conditional PDF of $X$ given $\{Y = y\}$. Set $G(Y) := E(X|Y=y)$. The random variable $G(Y)$ is called the \ti{conditional expectation} of $X$ given $Y$ and is denoted $E(X|Y)$. Again, $E(Y|X)$ is defined in parallelly. Note that
+\[G(Y) = E(X|Y) = \int_{-\infty}^{\infty}xf(x|y)\ dx\]\\
+\tb{Remark:} If $F:\R \to \R$ is a function then we can use the above definitions to define $E(F(X)|Y)$.\\\\
+\exx Consider the JPDF
+\[
+f(x, y) =
+\begin{cases}
+	6x, &\text{if}\ 0 \leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Then $X \sim$ Beta(2, 2), and $Y \sim$ Beta(3, 1)...\\
+... but given $\{Y=y\}$ $X \sim$ $y\x$Beta(2, 1), and given $\{X=x\}$ $Y \sim$ Uniform($x,\ 1$).\\\\
+Then $G(Y) = E(X|Y=y) = \frac{2}{3}y$ and $E(X|Y) = \frac{2}{3}Y$,
+and $G(X) = E(Y|X=x) = \frac{1+x}{2}$, and $E(Y|X) = \frac{1+X}{2}$\\\\\\
+\tb{Properties:} If $X$ and $Y$ are random variables then
+\begin{enumerate}
+	\item (Tower Property): $E(E(F(Y)|X)) = E(F(Y))$
+	\item If $H : \R \to \R$ then $E((Y\x H(X))|X) = H(X)E(Y|X)$
+\end{enumerate}
+\tb{Proof of the Tower Property in the Continuous Case:}\\ If $G(X) = E(F(Y)|X)$ then
+\[G(X) = \int_{-\infty}^{\infty} F(y)f(y|x)\ dy\]
+Also
+\[E(E(F(Y)|X)) = E(G(X)) = \int_{-\infty}^{\infty} G(X)f_{X}(x)\ dx\]
+Therefore
+\begin{align*}
+E(E(F(Y)|X)) &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} F(y)f(x|y)\ dy\ f_{X}(x)\ dx\\
+			&= \int_{-\infty}^{\infty} F(y) \int_{-\infty}^{\infty} f(y|x) f_{X}(x)\ dx\ dy\\
+			&= \int_{-\infty}^{\infty} F(y) \int_{-\infty}^{\infty} f(x, y)\ dx\ dy\\
+			&= \int_{-\infty}^{\infty} F(y)f_{Y}(y)\ dy\\
+			&= E(F(Y))
+\end{align*}
+\qed\\\\
+\thm (Variance Formula) If $X$ and $Y$ are random variables then
+\[V(Y) = E(V(Y|X)) + V(E(Y|X))\]
+where $V(Y|X) = E(Y^{2}|x) - (E(Y|X))^{2}$\\\\
+\proo He did the proof but I didn't write it down so I need to find it.
 \newpage
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
