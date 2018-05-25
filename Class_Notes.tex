@@ -40,6 +40,7 @@
 \newcommand{\exx}{\textbf{Ex: }}
 \newcommand{\exxi}{\textbf{Ex 1: }}
 \newcommand{\exxii}{\textbf{Ex 2:  }}
+\newcommand{\exxiii}{\textbf{Ex 3:  }}
 \newcommand{\soln}{\textbf{Solution: }}
 
 \title{MATH 323 Class Notes}
@@ -1645,13 +1646,138 @@ Let $X, Y$ be two random variables. Then
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 23, 2018}
+\subsection{Examples of Expected Value}
+\exxi Consider the JPDF of $X$, and $Y$ given by
+\[
+f(x, y) =
+\begin{cases}
+	6x, &\text{if}\ 0 \leq X \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Then $E(X^{2}Y) =$ $\displaystyle \iint_{D}x^{2}yf(x, y)\ dA = \int_{0}^{1} \int_{0}^{4} 6x^{3}y\ dx\ dy = \frac{1}{4}$\\\\
+\exxii Consider the JPDF of $X$, and $Y$ given by
+\[
+f(x, y) =
+\begin{cases}
+	x^{2}e^{-x-2y}, &\text{if}\ 0 \leq y, 0 \leq x\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Then $E(X^{3}Y^{2}) =$ $\displaystyle \iint_{D}x^{3}y^{2}f(x, y)\ dA$. Note that $X$ and $Y$ are independent so $\displaystyle E(X^{2}Y^{2}) = E(X^{3})E(Y^{2}) = \bigg(\int_{0}^{\infty}y^{2}e^{-2y}\ dy\bigg)\bigg(\int_{0}^{\infty}x^{5}e^{-x}\ dx\bigg) = \Ga(6)\frac{\Ga(3)}{2^3} = 30$
+\subsection{Properties of Expected Value}
+Let $X$, and $Y$ be two random variables. Then
+\begin{enumerate}
+	\item If $C \in \R$ is constant then $E(C) = C$
+	\item If $F : \R^{2} \to \R$, and $G : \R^{2} \to \R$ are functions, and $\al,\be \in \R$ are constants, then
+		\begin{itemize}
+			\item $E(\al F(X, Y) + \be G(X, Y)) = E(\al F(X, Y)) + E(\be G(X, Y))$
+			\item In particular $E(\al X + \be Y) = \al E(X) + \be E(Y)$
+		\end{itemize}
+\end{enumerate}
+\ \\
+\prop If $X$, and $Y$ are independent random variables and $F : \R^{2} \to \R$, $G : \R^{2} \to \R$ are functions, then
+\[E(F(X)G(Y)) = E(F(X))E(G(Y))\]
+\proo Follows immediately from the definitions of expected value and independence.
+\subsection{Moment Generating Functions}
+If $X$, and $Y$ are two independent random variables then the \ti{moment generating function} of $X$ and $Y$, $m_{X+Y}(t)$, is defined as
+\[m_{X+Y}(t) = m_{X}(t)m_{Y}(t)\]
+\exxi Suppose $X_{1} \sim$ Poisson($\la_{1}$), and $X_{2} \sim$ Poisson($\la_{2}$) are independent. Then
+\begin{align*}
+	m_{X_{1}+X_{2}}(t) &= m_{X_{1}}(t)m_{X_{2}}(t)\\
+					&= e^{\la_{1}(e^{t}-1)}e^{\la_{2}(e^{t}-1)}\\
+					&= e^{(\la_{1}+\la_{2})(e^{t}-1)}
+\end{align*}
+and therefore $X_{1} + X_{2}$ is a Poisson random variable with mean $\la_{1} + \la_{2}$.\\\\
+\exxii Suppose $X_{1} \sim$ N($\mu_{1},\ \sg_{1}^{2}$), and $X_{2} \sim$ N($\mu_{2},\ \sg_{2}^{2}$) are independent. Then
+\begin{align*}
+	m_{X_{1}+X_{2}}(t) &= m_{X_{1}}(t)m_{X_{2}}(t)\\
+					&= \big(e^{\mu_{1}t+\sg_{1}^{2}t^{2}/2}\big)\big(e^{\mu_{2}t+\sg_{2}^{2}t^{2}/2}\big)\\
+					&= e^{\mu_{1}t+\sg_{1}^{2}t^{2}/2 + \mu_{2}t+\sg_{2}^{2}t^{2}/2}
+\end{align*}
+and thus $X_{1} + X_{2} \sim$ N($\mu_{1} + \mu_{2},\ \sg_{1}^{2} + \sg_{2}^{2}$)\\\\
+\exxiii Suppose $X_{1} \sim$ Gamma($\al_{1},\ \be$) and $X_{2} \sim$ Gamma($\al_{2},\ \be$). Then
+\[m_{X_{1} + X_{2}(t)} = m_{X_{1}}(t)m_{X_{2}}(t) = \frac{1}{(1-\be t)^{\al_{1}}} + \frac{1}{(1-\be t)^{\al_{2}}} = \frac{1}{(1-\be t)^{\al_{1} + \al_{2}}}\]
+and thus $X_{1} + X_{2} \sim$ Gamma($\al_{1} + \al_{2},\ \be$)\\\\
+The above example holds for all Gamma random variables $X_{1}$, $X{2}$ given their $\be$s are equal.\\\\
+\tb{Ex 4:} Suppose $X_{1} \sim \mathcal{X}^{2}(p_{1})$, are $X_{2} \sim \mathcal{X}^{2}(p_{2})$ are independent random variables, then $X_{1} + X_{2} \sim \mathcal{X}^{2}(p_{1}+p_{2})$
+\subsection{Covariance}
+Let $X$, and $Y$ be two random variables. \ti{The covariance} of $X$, and $Y$, cov($X, Y$) is defined as
+\[\text{cov}(X, Y) = E((X-\mu_{X})(Y-\mu_{Y}))\]
+where $\mu_{X}$, and $\mu_{Y}$ are defined as $E(X)$, and $E(Y)$ respectively.\\\\
+\tb{Remark:} Note that cov($X, X$) = $V(X)$.\\
+\proo The proof of this immediately mirrors the proof of the following proposition.\\\\
+\prop cov($X, Y$) = $E(XY) - E(X)E(Y)$\\
+\proo Let $\mu_{X} = E(X)$, $\mu_{Y} = E(Y)$.
+\begin{align*}
+	\text{cov}(X, Y) &= E((X-\mu_{X})(Y-\mu_{Y}))\\
+				&= E(XY - X\mu_{Y} - Y\mu_{X} + \mu_{X}\mu_{Y})\\
+				&= E(XY) - E(X)\mu_{Y} - E(Y)\mu_{Y} + \mu_{X}\mu_{Y}\\
+				&= E(XY) - \mu_{X}\mu_{Y} \\
+				&= E(XY) - E(X)E(Y)
+\end{align*}
+\qed\\
+\exx Consider the following JPDF
+\[
+f(x, y) =
+\begin{cases}
+	6x, &\text{if}\ 0 \leq x \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Note that $X \sim$ Beta($2, 2$), $Y \sim$ Beta($3, 1$), therefore $E(X) = \frac{1}{2}$, and $E(Y) = \frac{3}{4}$.  Therefore, to find cov($X, Y$) we simply do
+\[\text{cov}(X, Y) = E(XY) - E(X)E(Y) = E(XY) - \frac{3}{8}\]
+Now we need to find E(XY). By definition
+\[E(XY) = \int_{0}^{1} \int_{0}^{4} xy6x\ dx\ dy = \int_{0}^{1} 2y^{3}\ dy = \frac{2}{5}\]
+\subsection{Properties of Covariance}
+Let $X_{1}$, $X_{2}$, $Y_{1}$, and $Y_{2}$ be random variables, and let $\al_{1}$, $\al_{2} \in \R$ be constants. Then
+\begin{enumerate}
+	\item cov($X, Y$) = cov($Y, X$)
+	\item cov($\al_{1}X_{1} + \al_{2}X_{2}, Y$) = $\al_{1}$cov($X_{1}, Y$) + $\al_{2}$cov($X_{2}, Y$)
+	\item cov($X, \al_{1}Y_{1} + \al_{2}Y_{2}$) = $\al_{1}$cov($X, Y_{1}$) + $\al_{2}$cov($X, Y_{2}$)
+	\item cov($X, X$) = $V(X)$
+	\item cov($X, X$) = 0 $\iff$ $X$ is constant
+\end{enumerate}
+\exxi
+\begin{align*}
+	V(X+Y) &= \text{cov}(X+Y, X+Y)\\
+			&= \text{cov}(X+Y, X ) + \text{cov}(X+Y, Y)\\
+			&= \text{cov}(X, X) + \text{cov}(Y, X) + \text{cov}(X, Y) + \text{cov}(Y, Y)\\
+			&= V(X) + 2\x\text{cov}(X, Y) + V(Y)
+\end{align*}
+\begin{enumerate}
+\setcounter{enumi}{5}
+	\item $V(\al X + \be Y) = \al^{2} V(X) + 2\al \be \text{cov}(X, Y) + \be^{2} V(Y)$
+	\item $\displaystyle V\bigg(\sum_{i=1}^{n} \al_{i}X_{i}\bigg) = \sum_{i=1}^{n} \al_{i}^{2} V(X_{i}) + 2\sum_{i\ \lt\ j} \al_{i}\al_{j} \text{cov}(X_{i}, X_{j})$
+\end{enumerate}
+\ \\
+\prop If $X$ and $Y$ are independent, then $\text{cov}(X, Y) = 0$.\\
+\proo Trivial
+\subsection{Uncorrelated Random Variables}
+Two random variables $X$, and $Y$ are said to be \ti{uncorrelated} if cov($X, Y$) = 0.\\\\
+\tb{Remark:} If $X$, and $Y$ are independent then they must be uncorrelated, but the converse isn't necessarily true.\\\\
+\prop If $X$, and $Y$ are random variables then $|\text{cov}(X, Y)| \leq \sqrt{V(X)}\sqrt{V(Y)}$. Moreover, $|\text{cov}(X, Y)| = \sqrt{V(X)}\sqrt{V(Y)}$ when $Y = \al X + \be$.\\\\
+We define the \ti{correlation coefficient} between $X$, and $Y$ as
+\[p(X, Y) = \frac{\text{cov}(X, Y)}{\sqrt{V(X)}\sqrt{V(Y)}}\]
+\exx Consider the JPDF
+\[
+f(x, y) =
+\begin{cases}
+	6x, &\text{if}\ 0 \leq y \leq 1\\
+	0, &\text{otherwise}
+\end{cases}
+\]
+Then $X \sim$ Beta(2, 2), and $Y \sim$ Beta(3, 1) and therefore $V(X) = \frac{4}{80}$, and $V(Y) = \frac{3}{80}$. Also cov($X, Y$) = $\frac{1}{40}$. Therefore
+\[p(X, Y) = \frac{\text{cov}(X, Y)}{\sqrt{V(X)}\sqrt{V(Y)}} = \frac{1/40}{\sqrt{12}/80} = \frac{1}{\sqrt{5}}\]
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 24, 2018}
+\subsection{Multinomial Distribution}
+Suppose an experiment yields $k \geq 2$ outcomes $E_{1}, E_{2}, \dots, E_{k}$, where $p_{1} = \bbP(E_{i})$, with $i = 1, 2 \dots, k$. Suppose we run the experiment $n$ times and let $X_{i}$ be the random variable containing the number of times that $E_{i}$ occured.
+\subsection{Conditional Expectation}
 \newpage
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 28, 2018}
@@ -1660,21 +1786,6 @@ Let $X, Y$ be two random variables. Then
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{May 29, 2018}
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{May 30, 2018}
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{May 31, 2018}
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section{Exercises}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
