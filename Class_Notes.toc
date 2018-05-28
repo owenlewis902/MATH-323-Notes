@@ -94,5 +94,4 @@
 \contentsline {section}{\numberline {14}May 24, 2018}{63}
 \contentsline {subsection}{\numberline {14.1}Multinomial Distribution}{63}
 \contentsline {subsection}{\numberline {14.2}Conditional Expectation}{64}
-\contentsline {section}{\numberline {15}May 28, 2018}{66}
-\contentsline {section}{\numberline {16}May 29, 2018}{67}
+\contentsline {section}{\numberline {15}May 29, 2018}{66}
